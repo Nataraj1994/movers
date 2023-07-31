@@ -244,7 +244,7 @@ iframe{
     top: 2px;
     height: 40px;
     width: 40px;
-    left: 565px;
+    left: 370px;
    display: none;
 }
 .km{
@@ -293,18 +293,21 @@ iframe{
 {
     body{
     background-image: linear-gradient(to right,rgba(20, 21, 19, 0.593),rgba(23, 4, 4, 0.812),rgb(64, 64, 54));
-
+    width: 415px;
+    position: absolute;
     }
     
  .logo{
     font-weight:bolder;
     left: -20px;
     align-items: center;
+    width: 48%;
     /* background-color: none; */
  }   
  iframe{
-    width: 620px;
-    left: -10px;
+    width: 412px;
+    height:250px;
+    left: -15px;
     position: relative;
  }
 .icon1{
@@ -314,11 +317,16 @@ iframe{
     display: none;
 }
 .cargoandpass{
-    width: 32%;
-    height: 55px;
-    align-items:center;
+    width: 135px;
+    height: 65px;
+    text-align:center;
+
     font-weight: 900;
     
+}
+.cargoandpass button{
+    width: 205px;
+    align-content:baseline;
 }
 .main2{
 height: 1200px;
@@ -327,9 +335,10 @@ width: 640px;
 /* background-size: cover; */
 }
 .pickup{
-    width:44%;
+    width:42%;
     height: 30px;
     padding: 2px;
+    left: 2px;
 }
 .up{
     left: 0px;
@@ -344,8 +353,8 @@ width: 640px;
     padding: 2px;
 }
 .select{
-    padding: 50px 20px;
-    width: 288px;
+    padding: 30px 20px;
+    width: 180px;
     font-weight: 900;
     /* background-color:orangered; */
 }
@@ -355,13 +364,14 @@ width: 640px;
     -webkit-text-fill-color: red yellowgreen;
 }
 .price{
-    bottom: -20%;
+    top: 30px;
+    left: 4%;
     position: relative;
     letter-spacing: 1px;
     font-size: x-large;
     height: 1rem;
     color: rgb(237, 236, 247);
-    left: 3%;
+    
     
 }
 .final{
@@ -373,17 +383,18 @@ width: 640px;
     height: 1.5rem;
 }
 .orderconfirm{
+    top: 70px;
     width: 30%;
-    height: 3rem;
+    height: 2rem;
     position: relative;
-    left: 13rem;
+    left: 10rem;
     border-radius: 2px;
     color: black;
     background-color: antiquewhite;
     box-shadow: 2px 1px 6px 2px  red;
 }
 .km{
-    bottom: -10%;
+    top: 20px;
     position: relative;
     letter-spacing: 1px;
     font-size: x-large;
@@ -395,11 +406,21 @@ width: 640px;
     background-color:rgba(255, 235, 205, 0.558);
 
 }
+.username{
+    top: 50px;
+    left: 20px;
+    position: relative;
+}
+.usermobile{
+    top: 60px;
+    left: 20px;
+    position: relative;
+}
 #mainul{
     
     z-index: 1;
-    left: 00px;
-    width: 600px;
+    left: 10px;
+    width: 400px;
     height: 990px;
     background-color: rgba(22, 22, 22, 0.949);
 }
@@ -410,15 +431,15 @@ ul li {
     /* display: inline; */
 }
 .driver-dropdown{
-    width: 400px;
+    width: 250px;
     height: 600px;
-    left: 50px;
+    left: 0px;
     top: -130px;
     position: relative;
     background-size: cover;
 }
 .close{
-    left: 230px;
+    left: 150px;
     height:40px ;
     position: relative;
 }
