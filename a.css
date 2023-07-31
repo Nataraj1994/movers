@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.button-group {
+    display: flex;
+}
+
+.button {
+    width: 100px;
+    height: 40px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.active {
+    background-color: #6ca0f9;
+    color: #fff;
+}
+.picmain{
+    display: none;
+}
+.pickmain1{
+    display: none;
+}
+.pickmain2{
+    display: none;
+}
