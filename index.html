@@ -16,74 +16,102 @@
             <li><a href="#"class="home">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a id="driver"href="#">Driver</a></li>
-            <div id="drop"class="driver-dropdown">
-                <h3>Registration</h3>
-                <button id="close"class="close">close</button>
-                <input type="text" placeholder="Enter Name"/><br>
-                <input type="number" placeholder="Enter Contact num"/><br>
-                <input type="text" placeholder="Enter Licence Num"/><br>
-                <label for="">Your Vehicle</label>
-                <select name="" id="">
-                    <option value="">Choose..</option>
-                    <option value="">2 wheel Bike</option>
-                    <option value="">3 wheel Auto(passenger)</option>
-                    <option value="">3 wheel Auto(Cargo) </option>
-                    <option value="">4 wheel 5foot</option>
-                    <option value="">4 wheel 9feet</option>
-                    <option value="">4 wheel 12 feet</option>
-                    <option value="">6 wheel Truck</option>
-                    <option value="">Tipper</option>
-                    <option value="">Tractor</option>
-                </select><br>
-                <input type="text"placeholder="Enter Vehicle Number">
-                   <button class="sendotp">Send OTP</button><input type="text" placeholder="Enter OTP"/><br>
-                   <button>Register</button><br>
-                   <b>Registered Successfully</b><br>
-                   <b>Your ID is :.....</b><br>
+           
+            <form action="index1.html" id="form" > 
+                <div id="drop"class="driver-dropdown">
+                   <h3>Registration</h3>
+                   <button id="close"class="close">close</button>
+                   <input id="drivername"type="text" placeholder="Enter Name" required/><br>
+                   <input id="drivernum"type="num" placeholder="Enter Contact num"required/><br>
+                   <input id="driverliecence"type="text" placeholder="Enter Licence Num"required/><br>
+                   <label for="" >Your Vehicle</label>
+                   <select name="" id="vehiclehave">
+                              <option value="">Choose..</option>
+                              <option value="2 wheel Bike">2 wheel Bike</option>
+                              <option value="3 wheel Auto(passenger)">3 wheel Auto(passenger)</option>
+                              <option value="3 wheel Auto(Cargo)">3 wheel Auto(Cargo) </option>
+                              <option value="4 wheel 5foot">4 wheel 5foot</option>
+                              <option value="4 wheel 9feet">4 wheel 9feet</option>
+                              <option value="4 wheel 12 feet">4 wheel 12 feet</option>
+                              <option value="6 wheel Truck">6 wheel Truck</option>
+                              <option value="Tipper">Tipper</option>
+                              <option value="Tractor">Tractor</option>
+                    </select><br>
+                   <input id="drivervehiclenum" type="text"placeholder="Enter Vehicle Number"required>
+                   <button class="sendotp">Send OTP</button><input id="otp"type="text" placeholder="Enter OTP"/><br>
+                   <input type="button"id="submit"value="submit" action="index1.html"onclick="registered()"></input><br>
+                   <input  id="resett"type="reset"/>
+                   <b id="Successfully"></b><br>
+                   <!-- <b>Your ID is :.....</b><br> -->
                    <hr>
-            </div>
+                </div>
+            </form>
+           
             <li><a href="#">Contact Us</a></li>
         </ul>
+
         <!-- <div class="baground-img"></div> -->
-     <div class="main-2">
-            <button class="cargoandpass" id="cargo" class="active" type="button" onclick="pass(1)" >Cargo Vehicles</button>
-            <button  class="cargoandpass" id="pass1" onclick="pass(2)">Passenger Vehicles</button>
-            <button  class="cargoandpass" id="agri"  onclick="pass(3)">Agriculture</button>
-            
-         <div class="pic" id="pic"><input class="pickup" id="pickup"type="text" placeholder="Enter Pickup Point"/> <b id="to">..To..</b>
-         <input class="pickup"type="text" id="droping"placeholder="Enter Droping Point"/>
-         <input id="material"class="up"type="text"placeholder="Type of materials"/>
-          <input type="text" class="agriplace" id="agriplace" placeholder="Enter place"></div><b id="to1">To..</b>
-         <h1 class="user">Select Type Vehicle</h1>
-         <button id="bike" class="select">Bike</button>
-         <button id="Auto" class="select">Auto</button>
-         <button id="car" class="select" >Car</button>
-         <button id="Traveller" class="select">Traveller</button>
-         <button id="auto" class="select">3 Wheel Auto</button>
-         <button id="tempo1" class="select">4 wheel 5 feet</button>
-         <button id="tempo2" class="select">4 wheel 9 feet</button>
-         <button id="tempo3" class="select">4 wheel 12 feet</button>
-         <button id="tempo4" class="select">6 wheel Truck</button>
-         <button id="Tipper" class="select">Tipper</button>
-         <button id="Tiller" class="select">Tiller</button>
-         <button id="hitachi" class="select">Mini Hitachi</button>
-         <button id="jcb" class="select">JCB</button>
-         <button id="Tractor" class="select">Tractor</button><br>
+     <div class="tabcontainer">
+                  <div class="buttoncontainer">
+                    <button  onclick="showpanel(0,'#9966cc')">Cargo Vehicles</button>
+                    <button  onclick="showpanel(1,'#cccc00')">Passenger Vehicles</button>
+                    <button onclick="showpanel(2,'#66cc00')">Agriculture</button>
+                   </div>
+
+                <div class="tabpanel">
+                   <button data-value="1" id="auto" class="select">3 Wheel Auto</button>
+                   <button data-value="2"id="tempo1" class="select">4 wheel 5 feet</button>
+                   <button data-value="3"id="tempo2" class="select">4 wheel 9 feet</button>
+                   <button data-value="4"id="tempo3" class="select">4 wheel 12 feet</button>
+                   <button data-value="5"id="tempo4" class="select">6 wheel Truck</button>
+                   <button data-value="6"id="Tipper" class="select" value="Tipper">Tipper</button>
+                   <button data-value="8"id="Tractor" class="select">Tractor</button><br>
+                  </div>
+
+               <div class="tabpanel">                 
+                   <button data-value="9"id="bike" class="select">Bike</button>
+                   <button data-value="10"id="Auto" class="select">Auto</button>
+                   <button data-value="11"id="car" class="select" >Car</button>
+                   <button data-value="12"id="Traveller" class="select">Traveller</button>
+
+               </div>                
+     
+                <div class="tabpanel">
+                    <button data-value="13"id="Tiller" class="select">Tiller</button>
+                    <button data-value="14"id="hitachi" class="select">Mini Hitachi</button>
+                    <button data-value="15"id="jcb" class="select">JCB</button>
+                    <button data-value="16"id="Tractor" class="select">Tractor</button><br>
+                  </div>
+                  <span class="search"><input id="a11"type="text" placeholder="Enter Pick-Up Place"/><span id="too">TO</span><input id="b11" type="text" placeholder="Enter Droping Place"/> <input id="materials"type="text" placeholder="Type of Material"/></span>
           <div class="map">
-            <h1>Google map </h1>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30885.238283238938!2d74.81706285468401!3d14.618731045643887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbea8d7fcd0f39b%3A0x83f28aeb1f2b1502!2sSirsi%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1690789630399!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
           </div>
-          <b class="km"id="km">Total Kilometer : <input class="km1"type="text"readonly></b><br>
-          <b class="price">Total Price is :<input id="priceleft"class="final"type="text" readonly></b><br>
-          <input class="username"type="text" placeholder="Your name" required><br>
-           <input class="usermobile" type="text" placeholder="Contact Number"required><br>
-          <button class="orderconfirm" type="submit" onclick="orderconfirm()">Order Confirm</button>
-
-         
+         <div class="detail"> 
+          <b id="kmprice"></b><br>
+          <b class="km"id="km"><p id="tkm">Total Kilometer :</p> <input onload="myFunction12()" id="km1"class="km1"type="Num" value="10"/></b><br>
+          <b class="price"><p id="pricee">Total Price is :</p><input  id="priceleft"class="final"type="Number" ></b><br>
+          <input id="username"class="username"type="text" placeholder="Your name" required><br>
+           <input id="usermobile"class="usermobile" type="text" placeholder="Contact Number"required><br>
+          <button class="orderconfirm" type="submit"onclick="orderconfirm()">Order Confirm</button>
+         </div>
+          
         </div>
-    </div>
+        <div id="customer"class="customer">
+            <button id="c_close">close</button>
+            <label  id="c_label">Order Confirmed</label><br>
+            <label id="ga" >Pickup-Point :<span id="c_pickup"></label>,<label id="ga">Destination-Point :<span id="c_Drop"></label><br>
+            <label id="c_details">Vehicle Details</label><br>
+            <label id="c_v1">Vehicle Type :<span id="c_vehicle"></label><br>
+            <label id="c_v1" >Vehicle Number :<span id="c_Vnum"></label><br>
+            <label id="c_v1" >Driver Name :<span id="c_Dname"></label><br>
+            <label id="c_v1" >Contact Number:<span id="c_Dnumber"></label><br>
+            <label id="c_v1">Total KM :<span id="c_km"></span></label><br>
+            <label id="c_v1">Total Amount :<span id="c_Price"></span></label>
+            <label id="lab"><h1>Happy Journey</h1></label>
+            </div>
+       
 
+    </div>
 
 
     <script src="index.js"></script>
