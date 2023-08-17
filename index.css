@@ -379,6 +379,8 @@ position:absolute;
 {
     body{
     background-image: linear-gradient(to right,rgba(20, 21, 19, 0.593),rgba(23, 4, 4, 0.812),rgb(64, 64, 54));
+     display: flex;
+
     }
     
  .logo{
