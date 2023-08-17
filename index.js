@@ -115,23 +115,27 @@ buttons.forEach(button => {
   }
 
  function registered(){
-  var drivername = document.getElementById("drivername").value;
-  var drivernumber = document.getElementById("drivernum").value;
-  let driverliecence = document.getElementById("driverliecence").value;
-  let drivervehiclenum = document.getElementById("drivervehiclenum").value;
-  let vehiclehave = document.getElementById("vehiclehave").value;
-  
-  localStorage.setItem("localstoragedrivername",drivername);
-  localStorage.setItem("localstoragedrivernum",drivernumber);
-  localStorage.setItem("localstoragedriverliecence",driverliecence);
-  localStorage.setItem("localstoragedrivervehiclenum",drivervehiclenum);
-  localStorage.setItem("localstoragedrivervehiclehave",vehiclehave);
-  document.getElementById("submit").addEventListener('click',function(){
-  document.getElementById("form").reset();
-  // Form.style.display="none";
-  // document.getElementById("Successfully").innerHTML="Successfully registered";
- });
-};
+                              var drivername = document.getElementById("drivername").value;
+                              var drivernumber = document.getElementById("drivernum").value;
+                              let driverliecence = document.getElementById("driverliecence").value;
+                              let drivervehiclenum = document.getElementById("drivervehiclenum").value;
+                              let vehiclehave = document.getElementById("vehiclehave").value;
+                              if(!drivername||!drivernumber||!driverliecence||!drivervehiclenum||!vehiclehave){
+                                alert("Please enter values in all fields.");
+                                console.log(drivername,drivernumber,driverliecence,drivervehiclenum,vehiclehave);
+                              }else{
+                              localStorage.setItem("localstoragedrivername",drivername);
+                              localStorage.setItem("localstoragedrivernum",drivernumber);
+                              localStorage.setItem("localstoragedriverliecence",driverliecence);
+                              localStorage.setItem("localstoragedrivervehiclenum",drivervehiclenum);
+                              localStorage.setItem("localstoragedrivervehiclehave",vehiclehave);
+                              document.getElementById("submit").addEventListener('click',function(){
+                              document.getElementById("form").reset();
+                              // Form.style.display="none";
+                              // document.getElementById("Successfully").innerHTML="Successfully registered";
+                             });
+                                 }
+                       };
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function orderconfirm(){
  var p=document.getElementById("a11").value;
@@ -145,10 +149,7 @@ function orderconfirm(){
 }else{
   document.getElementById("customer").style.display="block";
   console.log(p,q,s,t);
-
-
- 
- var a=document.getElementById("a11").value;
+  var a=document.getElementById("a11").value;
  document.getElementById("c_pickup").innerHTML=a;
  var b=document.getElementById("b11").value;
  document.getElementById("c_Drop").innerHTML=b;
@@ -173,6 +174,28 @@ closebox.addEventListener('click',()=>{
 };
 };
   
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function generateOTP() {
+  const digits = '0123456789';
+  let otp = '';
+
+  for (let i = 0; i < 6; i++) {
+      const randomIndex = Math.floor(Math.random() * digits.length);
+      otp += digits.charAt(randomIndex);
+  console.log(randomIndex);
+
+  }
+
+  return otp;
+ 
+}
+
+function displayOTP() {
+  const otpContainer = document.getElementById('otp');
+  otpContainer.value= generateOTP();
+
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  
 
   
