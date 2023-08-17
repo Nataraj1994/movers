@@ -17,7 +17,7 @@
             <li><a href="#">About</a></li>
             <li><a id="driver"href="#">Driver</a></li>
            
-            <form action="index1.html" id="form" > 
+            <form action="" id="form" > 
                 <div id="drop"class="driver-dropdown">
                    <h3>Registration</h3>
                    <button id="close"class="close">close</button>
@@ -38,7 +38,7 @@
                               <option value="Tractor">Tractor</option>
                     </select><br>
                    <input id="drivervehiclenum" type="text"placeholder="Enter Vehicle Number"required>
-                   <button class="sendotp">Send OTP</button><input id="otp"type="text" placeholder="Enter OTP"/><br>
+                   <button class="sendotp" onclick="displayOTP()">Send OTP</button><input id="otp"type="text" placeholder="Enter OTP"/><br>
                    <input type="button"id="submit"value="submit" action="index1.html"onclick="registered()"></input><br>
                    <input  id="resett"type="reset"/>
                    <b id="Successfully"></b><br>
@@ -88,7 +88,7 @@
           </div>
          <div class="detail"> 
           <b id="kmprice"></b><br>
-          <b class="km"id="km"><p id="tkm">Total Kilometer :</p> <input onload="myFunction12()" id="km1"class="km1"type="Num" /></b><br>
+          <b class="km"id="km"><p id="tkm">Total Kilometer :</p> <input onload="myFunction12()" id="km1"class="km1"type="Num"/></b><br>
           <b class="price"><p id="pricee">Total Price is :</p><input  id="priceleft"class="final"type="Number" ></b><br>
           <input id="username"class="username"type="text" placeholder="Your name" required><br>
            <input id="usermobile"class="usermobile" type="text" placeholder="Contact Number"required><br>
