@@ -1,3 +1,8 @@
+
+
+
+
+
 var tabbuttons = document.querySelectorAll(".tabcontainer .buttoncontainer button");
 var tabpanels = document.querySelectorAll(".tabcontainer .tabpanel");
 console.log(tabbuttons);
@@ -114,28 +119,6 @@ buttons.forEach(button => {
     mainul.style.display ="none";
   }
 
- function registered(){
-                              var drivername = document.getElementById("drivername").value;
-                              var drivernumber = document.getElementById("drivernum").value;
-                              let driverliecence = document.getElementById("driverliecence").value;
-                              let drivervehiclenum = document.getElementById("drivervehiclenum").value;
-                              let vehiclehave = document.getElementById("vehiclehave").value;
-                              if(!drivername||!drivernumber||!driverliecence||!drivervehiclenum||!vehiclehave){
-                                alert("Please enter values in all fields.");
-                                console.log(drivername,drivernumber,driverliecence,drivervehiclenum,vehiclehave);
-                              }else{
-                              localStorage.setItem("localstoragedrivername",drivername);
-                              localStorage.setItem("localstoragedrivernum",drivernumber);
-                              localStorage.setItem("localstoragedriverliecence",driverliecence);
-                              localStorage.setItem("localstoragedrivervehiclenum",drivervehiclenum);
-                              localStorage.setItem("localstoragedrivervehiclehave",vehiclehave);
-                              document.getElementById("submit").addEventListener('click',function(){
-                              document.getElementById("form").reset();
-                              // Form.style.display="none";
-                              // document.getElementById("Successfully").innerHTML="Successfully registered";
-                             });
-                                 }
-                       };
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function orderconfirm(){
  var p=document.getElementById("a11").value;
