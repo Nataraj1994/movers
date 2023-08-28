@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(8, 186, 186);
+}
+table,th,td{
+   
+   border-collapse: collapse;
+
+    border:1px solid rgb(42, 14, 14);
+}
+table{
+    width: 100%;
+}
+th{
+    text-align: left;
+    text-transform: capitalize;
+}
+th,td{
+    padding: 5px;
+    text-transform: capitalize;
+    /* text-transform: uppercase; */
+
+}
