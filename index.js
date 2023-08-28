@@ -1,4 +1,17 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyC0YpkxpZC4mtrdxODaMYvJ0vD1ssfbcG0",
+  authDomain: "moversnew-ecf01.firebaseapp.com",
+  databaseURL: "https://moversnew-ecf01-default-rtdb.firebaseio.com",
+  projectId: "moversnew-ecf01",
+  storageBucket: "moversnew-ecf01.appspot.com",
+  messagingSenderId: "996521849489",
+  appId: "1:996521849489:web:a7ad3c4f2e4b5f7a2ac530"
+};
+firebase.initializeApp(firebaseConfig);
+console.log("hai ...kjdjd");
 
+const db = firebase.firestore();
+console.log(db);
 
 
 
@@ -120,44 +133,68 @@ buttons.forEach(button => {
   }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function orderconfirm(){
- var p=document.getElementById("a11").value;
- var q=document.getElementById("b11").value;
- var s=document.getElementById("username").value;
- var t=document.getElementById("usermobile").value;
- if(!p||!q||!s||!t){
-  console.log(p,q,s,t);
+//Order confirmed notification details
 
-  alert("Please enter values in all fields.");
-}else{
-  document.getElementById("customer").style.display="block";
-  console.log(p,q,s,t);
-  var a=document.getElementById("a11").value;
- document.getElementById("c_pickup").innerHTML=a;
- var b=document.getElementById("b11").value;
- document.getElementById("c_Drop").innerHTML=b;
- var c=localStorage.getItem("localstoragedrivername");
- document.getElementById("c_Dname").innerHTML=c;
- var d=localStorage.getItem("localstoragedrivernum");
- document.getElementById("c_Dnumber").innerHTML=d;
- var e=localStorage.getItem("localstoragedrivervehiclenum");
- document.getElementById("c_Vnum").innerHTML=e;
- var f=localStorage.getItem("localstoragedrivervehiclehave");
- document.getElementById("c_vehicle").innerHTML=f;
- var g=document.getElementById("priceleft").value;
-document.getElementById("c_Price").innerText= g;
-var h=document.getElementById("tkm").value;
-console.log('result is ' + h);
-document.getElementById("c_km").innerHTML=h;
+function orderconfirm(){
+db.collection('userdata').get().then((snapshot)  =>{
+  snapshot.docs.forEach(doc => {
+      console.log(doc.data().name);
+
+      let aa=doc.data().drivername;
+      console.log(aa);
+      var p=document.getElementById("a11").value;
+      var q=document.getElementById("b11").value;
+      var s=document.getElementById("username").value;
+      var t=document.getElementById("usermobile").value;
+      if(!p||!q||!s||!t){
+        console.log(p,q,s,t);
+      
+        alert("Please enter values in all fields.");
+      }else{
+      
+        console.log(p,q,s,t);
+     document.getElementById("customer").style.display="block";
+     var a=document.getElementById("a11").value;
+     document.getElementById("c_pickup").innerHTML=a;
+     var b=document.getElementById("b11").value;
+     document.getElementById("c_Drop").innerHTML=b;
+     var cc=doc.data().drivername;
+     document.getElementById("c_Dname").innerHTML=cc;
+     var d=doc.data().drivernum;
+     document.getElementById("c_Dnumber").innerHTML=d;
+     var e=doc.data().drivervehiclenum ;
+     document.getElementById("c_Vnum").innerHTML=e;
+     var f=doc.data().vehiclehave ;
+     document.getElementById("c_vehicle").innerHTML=f;
+     var g=document.getElementById("priceleft").value;
+    document.getElementById("c_Price").innerText= g;
+    var h=document.getElementById("km1").value;
+    console.log('result is ' + h);
+    document.getElementById("c_km").innerText=h;
+
+
+     var closebox=document.getElementById("c_close");
+     closebox.addEventListener('click',()=>{
+     customer.style.display="none";
+     });
+
+    
  
-var closebox=document.getElementById("c_close");
-closebox.addEventListener('click',()=>{
-  customer.style.display="none";
-});
-};
+    }
+   
+  })
+  a11.value="";
+  b11.value="";
+  username.value="";
+  usermobile.value="";
+  km1.value="";
+  priceleft.value="";
+  materials.value="";
+})
 };
   
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//generate OTP
 function generateOTP() {
   const digits = '0123456789';
   let otp = '';
@@ -179,8 +216,53 @@ function displayOTP() {
 
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ //Data store in firebase
+ var userCollection = db.collection("uservalue");
+ var drivername = document.getElementById("drivername");
+ var drivernum = document.getElementById("drivernum");
  
-
+ var driverliecence = document.getElementById("driverliecence");
+ var vehiclehave = document.getElementById("vehiclehave");
+ var drivervehiclenum = document.getElementById("drivervehiclenum");
+ var addButton= document.getElementById("submit");
+ 
+ addButton.addEventListener("click", function() {
+    // Get the values from the input fields
+    let drivername1= drivername.value;
+    let drivernum1= drivernum.value;
+    let driverliecence1= driverliecence.value.toUpperCase();
+    let vehiclehave1= vehiclehave.value;
+    let drivervehiclenum1= drivervehiclenum.value.toUpperCase();
+ 
+     console.log(vehiclehave1);
+     console.log(driverliecence1);
+     console.log(drivername1);
+     
+ db.collection("userdata").add({
+     drivername: drivername1,
+     drivernum: drivernum1,
+     driverliecence: driverliecence1,
+     vehiclehave: vehiclehave1,
+     drivervehiclenum: drivervehiclenum1
+ 
+  
+ })
+ .then((docRef) => {
+    console.log("Document written with ID: ", docRef.id);
+  
+ })
+ 
+ .catch((error) => {
+    console.error("Error adding document: ", error);
+ });
+ driverliecence.value = "";
+ drivername.value = "";
+ drivernum.value="";
+ vehiclehave.value="";
+ drivervehiclenum.value="";
+ otp.value="";
+ });
+ 
   
 
  
