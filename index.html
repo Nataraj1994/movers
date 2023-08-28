@@ -11,13 +11,12 @@
         <h1 class="logo">movers</h1> 
         <button class="icon1" id="icon1" onclick="icon1()">img</button>
         <ul id="mainul">
-       
-            <button onclick="homepage()"class="close2"><a href="#1">close</a></button>
+            <button type="button"   onclick="homepage()"class="close2"><a href="#1">close</a></button>
             <li><a href="#"class="home">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a id="driver"href="#">Driver</a></li>
            
-            <form action="" id="form" > 
+            <form id="form" > 
                 <div id="drop"class="driver-dropdown">
                    <h3>Registration</h3>
                    <button id="close"class="close">close</button>
@@ -25,7 +24,7 @@
                    <input id="drivernum"type="num" placeholder="Enter Contact num"required/><br>
                    <input id="driverliecence"type="text" placeholder="Enter Licence Num"required/><br>
                    <label for="" >Your Vehicle</label>
-                   <select name="" id="vehiclehave">
+                   <select title="xx" id="vehiclehave">
                               <option value="">Choose..</option>
                               <option value="2 wheel Bike">2 wheel Bike</option>
                               <option value="3 wheel Auto(passenger)">3 wheel Auto(passenger)</option>
@@ -39,7 +38,7 @@
                     </select><br>
                    <input id="drivervehiclenum" type="text"placeholder="Enter Vehicle Number"required>
                    <button class="sendotp" onclick="displayOTP()">Send OTP</button><input id="otp"type="text" placeholder="Enter OTP"/><br>
-                   <input type="button"id="submit"value="submit" action="index1.html"onclick="registered()"></input><br>
+                   <button type="button"id="submit"value="submit">submit</button><br>
                    <input  id="resett"type="reset"/>
                    <b id="Successfully"></b><br>
                    <!-- <b>Your ID is :.....</b><br> -->
@@ -88,8 +87,8 @@
           </div>
          <div class="detail"> 
           <b id="kmprice"></b><br>
-          <b class="km"id="km"><p id="tkm">Total Kilometer :</p> <input onload="myFunction12()" id="km1"class="km1"type="Num"/></b><br>
-          <b class="price"><p id="pricee">Total Price is :</p><input  id="priceleft"class="final"type="Number" ></b><br>
+          <b class="km"id="km"><p id="tkm">Total Kilometer :</p> <input onload="myFunction12()" id="km1"class="km1"type="Num"placeholder="num"/></b><br>
+          <b class="price"><p id="pricee">Total Price is :</p><input  id="priceleft"class="final"type="Number" placeholder="num"></b><br>
           <input id="username"class="username"type="text" placeholder="Your name" required><br>
            <input id="usermobile"class="usermobile" type="text" placeholder="Contact Number"required><br>
           <button class="orderconfirm" type="submit"onclick="orderconfirm()">Order Confirm</button>
@@ -114,6 +113,9 @@
     </div>
 
 
-    <script src="index.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+
+    <script src="./index.js"></script>
 </body>
 </html>
