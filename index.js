@@ -70,6 +70,7 @@ buttons.forEach(button => {
   
     // Get the value associated with the clicked button
     const selectedValue = parseInt(button.getAttribute("data-value"));
+console.log("xxxxx"+selectedValue);
    
     // Define variables for different prices
     const prices = {
@@ -88,12 +89,10 @@ buttons.forEach(button => {
   
     // Use the selected value to get the price from the 'prices' object
     const price = prices[selectedValue];
-   
-    
-    // var selectedValueElement =prices[selectedValue]; 
+     
     var km1 = document.getElementById("km1").value;
     console.log(km1);
-    console.log(prices[selectedValue]);
+    console.log("selected vehicle price is "+prices[selectedValue]);
     function myFunction12(){
     
       var selectedValueElement =prices[selectedValue]; 
@@ -109,9 +108,92 @@ buttons.forEach(button => {
     // Use the selected value as needed
     var text = document.getElementById("kmprice");
     text.textContent = "Per KM Price : " + price + " RS";
+ 
+   
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const userdataRef = db.collection('userdata');
+
+function fetchVehicleData(vehicleType) {
+  console.log(`Fetching data for ${vehicleType}`);
+  
+  userdataRef.where('vehiclehave', '==', vehicleType).get()
+    .then((snapshot) => {
+      if (!snapshot.empty) {
+        snapshot.docs.forEach(doc => {
+          const vehicleData = doc.data();
+          console.log("Vehicle name: ", vehicleData.drivername, "Number: ", vehicleData.drivernum);
+        });
+      } else {
+        console.log(`No document found with the specified vehicle type (${vehicleType}).`);
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching document:", error);
+    });
+}
+
+const vehicleTypes = [
+  '3 wheel Auto(passenger)',
+  '4 wheel 5foot',
+  '4 wheel 9feet',
+  '4 wheel 12 feet',
+  '6 wheel Truck',
+  'Tipper',
+  '',
+  'Tractor',
+  ' 2 wheel Bike',
+  'Auto',
+  'car',
+  'Traveller',
+  'Tiller',
+  'Minihitachi',
+  'JCB'
+];
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const selectedValue = parseInt(button.getAttribute("data-value"));
     
+    if (selectedValue >= 1 && selectedValue <= vehicleTypes.length) {
+      const selectedVehicleType = vehicleTypes[selectedValue -1];
+      fetchVehicleData(selectedVehicleType);
+    } else {
+      console.log("Invalid selectedValue");
+    }
+    
+    // Rest of your code...
   });
 });
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function renderUser(doc){
+  let vehiclehave =doc.data().vehiclehave + "   ";
+    }
+  
+      db.collection('userdata').get().then((snapshot) => {
+          snapshot.docs.forEach(doc => {
+              // console.log(doc.data().vehiclehave);
+              renderUser(doc);
+          });
+      });
+  
+  if (selectedValue == 3) {
+    console.log("hai ,value 3,,,,,");
+  
+    value_to_access =vehiclehave.innerText;
+    console.log("output of value access  "+value_to_access);
+    // renderUser(doc);
+  }
+
+})});
+
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   var driver=document.getElementById("driver");
