@@ -14,7 +14,7 @@ console.log("hai ...kjdjd");
 
 const db = firebase.firestore();
 console.log(db);
-const auth = firebase.auth();
+// const auth = firebase.auth();
 
 
 // const collectionRef = firebase.firestore().collection('userdata');
