@@ -17,14 +17,29 @@
             <li><a id="driver"href="#">Driver</a></li>
            
             <form id="form" > 
+                <div id="loginform">
+                    <p class="login_headline">Login</p>
+                    <button id="login_close" width="10px">Close</button><br>
+                    <input type="text" name="user_name" id="usermailid" placeholder="Enter Mail ID"><br><br>
+                    <input type="password" name="user_password" id="userpassword" placeholder="Enter password"><br>
+                    <button id="login_submit" onclick="signInUser()">Submit</button><br>
+                    <a href="#">Forgot password</a><br>
+                    <a id ="createNewAccount"href="#">Create New Account </a>
+
+                    
+
+
+                </div>
                 <div id="drop"class="driver-dropdown">
                    <h3>Registration</h3>
                    <button id="close"class="close">close</button>
                    <input id="drivername"type="text" placeholder="Enter Name" required/><br>
+                   <input type="text" name="email" id="enter-mail-id" placeholder="Enter Mail ID" required><br>
+                   <input type="password" name="password" id="enter-password" placeholder="Set password"required><br>
                    <input id="drivernum"type="num" placeholder="Enter Contact num"required/><br>
                    <input id="driverliecence"type="text" placeholder="Enter Licence Num"required/><br>
                    <label for="" >Your Vehicle</label>
-                   <select title="xx" id="vehiclehave">
+                   <select title="vehiclehave" id="vehiclehave">
                               <option value="">Choose..</option>
                               <option value="2 wheel Bike">2 wheel Bike</option>
                               <option value="3 wheel Auto(passenger)">3 wheel Auto(passenger)</option>
@@ -124,6 +139,8 @@
 
     <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-auth-compat.js"></script>
+
 
     <script src="./index.js"></script>
 </body>
