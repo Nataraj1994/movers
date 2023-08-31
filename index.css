@@ -1,558 +1,620 @@
 body{
-   margin: 0px;
-    padding: 0px;
-    border: 2px solid black;
-    /* background-image: linear-gradient(to right,rgba(20, 21, 19, 0.593),rgba(23, 4, 4, 0.812),rgb(64, 64, 54)); */
- background-color: rgb(198, 169, 138);
- /* overflow: hidden; */
-   
-}
-.main{
-    height: 100vh;
-    width: 100%;
-    background-position: center;
-    /* background-image: linear-gradient(to right,rgba(20, 21, 19, 0.593),rgba(23, 4, 4, 0.812),rgb(64, 64, 54)); */
-    position:relative;
-    /* border:2px solid black; */
-
-}
-.selected {
-    background-color: rgb(251, 82, 4);
-    color: rgb(11, 11, 11);
-  }
-.logo{
-    height: 30px;
-    background-color: rgba(12, 12, 240, 0.955);
-    text-transform: uppercase;
-    color: rgb(234, 104, 11);
-    font-size: xx-large;
-    font-weight: bolder;
-    width: 98.7%;
-    padding: 10px;
-    top: -21px;
-    position: relative;
+    margin: 0px;
+     padding: 0px;
+     border: 2px solid black;
+     /* background-image: linear-gradient(to right,rgba(20, 21, 19, 0.593),rgba(23, 4, 4, 0.812),rgb(64, 64, 54)); */
+  background-color: rgb(198, 169, 138);
+  /* overflow: hidden; */
     
-    
-
-}
- ul{
-    float: right;
-    top:-90px;
-    padding: 2px 25px 15px 20px;
+ }
+ .main{
+     height: 100vh;
+     width: 100%;
+     background-position: center;
+     /* background-image: linear-gradient(to right,rgba(20, 21, 19, 0.593),rgba(23, 4, 4, 0.812),rgb(64, 64, 54)); */
+     position:relative;
+     /* border:2px solid black; */
+ 
+ }
+ .selected {
+     background-color: rgb(251, 82, 4);
+     color: rgb(11, 11, 11);
+   }
+ .logo{
+     height: 30px;
+     background-color: rgba(12, 12, 240, 0.955);
+     text-transform: uppercase;
+     color: rgb(234, 104, 11);
+     font-size: xx-large;
+     font-weight: bolder;
+     width: 98.7%;
+     padding: 10px;
+     top: -21px;
      position: relative;
      
-    
-}
-ul li{
-    padding: 2px 15px 5px 10px;
-    display: inline-block;
-    /* padding: 20px; */
-    top: -15px;
-    position: relative;
-    /* width: 100%; */
-
-}
-ul li a{
-    left: 10%;
-    position: relative;
-    display: inline-block;
-    padding: 2px 50px;
-    font-size: 20px;
-
-    text-decoration: none;
-    color: aliceblue;
-}
-ul li a:hover{
-    color: red;
-}
-.driver-dropdown H3{
-    font-size: 25PX;
-}
-
-.map{
-    color: rgb(240, 251, 255);
-    position: relative;
-    top: 4px;
-    left: 2px;
-    width: 71.2%;
-    /* align-items: center; */
-}
-.search input{
-    padding: 10px;
-    left: 1px;
-    position: relative;
- 
-
-}
-#materials{
-    width: 41.1%;
-    left: 1%;
-}
-#a11{
-    border: none;/*pickup point*/
-    width: 26%;
-}
-#b11{
-    border: none;/*Droping point*/
-    left: 1%;
-    width: 26%;
-}
-#too{
-    font-weight: 900;
-    left: 9px;
-    color: rgb(242, 235, 235);
-    position: relative;
-}
-iframe{
-    width: 80%;
-    height: 400px;
-}
-#form{ 
-    position: absolute;
-    width: 200px;
-    height: 500px;
-}
-.driver-dropdown{
-    bottom: -60px;
-    display: none;
-    position: absolute;
-    text-align: center;
-    text-decoration: none;
-    padding: 20px 52px;
-    top: 25px;
-    left: 20rem;
-    border-radius: 30px 2px;
-    overflow: hidden;
-    z-index: 1;
-    width: 250px;
-    height: 550px;
-    box-shadow: 2px 9px 15px 1px red;
-    background-color: rgba(147, 186, 218, 0.96);
-}
-#submit{
-    width: 100%;
-    text-transform: uppercase;
-    background-color: chocolate;
-    border-bottom: none;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    position:static;
-    height: 30px;
-    box-shadow: 5px 2px 2px red;
-    cursor: pointer;
-}
-
-#resett{
-    border-bottom: none;
-    cursor: pointer;
-    font-weight: 100;
-    font-weight: bold;
-}
-.close{
-    position: relative;
-    bottom: 100px;
-    left: 155px;
-}
-
-::placeholder,input{
-    font-weight: 900;
-    font-size: 15px;
-    font: bolder;
-}
-.driver-dropdown input, select{
-    padding: 10px 0px ;
-    margin: 5px;
-    width: 100%;
-    outline: none;
-    background-color: rgba(151, 147, 141, 0.012);
-    border: none;
-    border-bottom: 2px solid black;
-}
-
-.logo ul li a:hover .driver-dropdown{
-    display: block;
-    position:relative;
-}
-.close2{
-    left: -35px;
-    top: 5px;
-
-    height: 30px;
-    font-weight:bold;
-    font-size: larger;
-    color: black;
-    float: right;
-    position: relative;
-    display: none;
-}
-.home{
-    color: red;
-}
-
-.tabcontainer{
-    width: 100%;
-    height: 200px;
-    position: relative;
-    left: 5rem;
-    background-color: rgb(247, 86, 11);
-    top: -43px;
-    left: 0px;
-}
-.buttoncontainer{
-    /* border-radius: 10px; */
-    
-  outline: none;
-    padding: 2px;
-    background-color: rgba(105, 106, 107, 0.923);
-
-}
-.buttoncontainer button{
-    width: 15%;
-    color: black;
-    padding: 15px;
-    left: -1px;
-    position: relative;
-    box-shadow: 2px 1px 5px 1px rgba(255, 0, 0, 0.693);
-}
-
-.tabpanel{
-    width:100;
-    padding: 2%;
-    text-align:start;
-    display: none;
-}
-
-.tabpanel button{
-    width: 150px;
-    height: 100px;
-    padding: 20px;
-  
-    
-}
-/* .selected{
-    background-color: rgba(229, 101, 10, 0.94);
-} */
-#gps{
-    padding: 20px;
-    font-size: larger;
-    color: black;
-}
-.icon1{
-    width: 50px;
-    height: 50px;
-    background-color: aliceblue;
-    position: absolute;
-    left: 86.5%;
-    top: -20px;
-    display: none;
-}
-.detail{
-    display: cover;
-    width: 607px;
-    height: 360px;
-    background-color: rgba(43, 11, 175, 0.404);
-    left:57.5%;
-    top: 16.7rem;
-    position: absolute;
-    padding: 20px;
-    align-items:center;
-    
-
-}
-.km input{
-    top: -25px;
-    left: 22%;
-    padding: 10px;
-    position: relative;
-
-}
-#pricee{ top: -15px;
      
-    position: relative;
-}
-#kmprice{
-    top:5px;
-    color:rgb(243, 243, 236);
-    left:5%;
-    position: relative;
-}
-#tkm{
-    top: 20px;
-    position: relative;
-}
-.price input{
-    top: -60px;
-    padding: 10px;
-    left: 22%;
-    position: relative;
-
-}
-.usermobile{
-    top: -40px;
-    left: 22%;
-    padding: 10px;
-    position: relative;
-
-}
-.orderconfirm{
-    top: -30px;
-    left: 22%;
-    padding: 10px;
-    position: relative;
-
-}
-.orderconfirm:hover{
-    background-color: orangered;
-}
-.username{
-    top: -50px;
-    left: 22%;
-    padding: 10px;
-    position: relative;
-
-}
-.customer{
-    width: 42.5%;
-    height:400px;
-    background-color: aquamarine;
-    z-index: 1000;
-    top:25px;
-    position: relative;
-    left: 57.5%;
-    display: none;
-    text-align:center;
-}
-/* .customer label{
-    top: 5%;
-    position:relative;
-    padding: 2%;
-    
-
-} */
-#c_close{
-    left: 46.1%;
-    width: 50px;
-    height: 40px;
-    position: relative;
-}
-#lab{
-    position: relative;
-    top: 35%;
+ 
+ }
+  ul{
+     float: right;
+     top:-90px;
+     padding: 2px 25px 15px 20px;
+      position: relative;
+      
+     
+ }
+ ul li{
+     padding: 2px 15px 5px 10px;
+     display: inline-block;
+     /* padding: 20px; */
+     top: -15px;
+     position: relative;
+     /* width: 100%; */
+ 
+ }
+ ul li a{
+     left: 10%;
+     position: relative;
+     display: inline-block;
+     padding: 2px 50px;
+     font-size: 20px;
+ 
+     text-decoration: none;
+     color: aliceblue;
+ }
+ ul li a:hover{
+     color: red;
+ }
+ .driver-dropdown H3{
+     font-size: 25PX;
+ }
+ 
+ .map{
+     color: rgb(240, 251, 255);
+     position: relative;
+     top: 4px;
+     left: 2px;
+     width: 71.2%;
+     /* align-items: center; */
+ }
+ .search input{
+     padding: 10px;
+     left: 1px;
+     position: relative;
+  
+ 
+ }
+ #materials{
+     width: 41.1%;
+     left: 1%;
+ }
+ #a11{
+     border: none;/*pickup point*/
+     width: 26%;
+ }
+ #b11{
+     border: none;/*Droping point*/
+     left: 1%;
+     width: 26%;
+ }
+ #too{
+     font-weight: 900;
+     left: 9px;
+     color: rgb(242, 235, 235);
+     position: relative;
+ }
+ iframe{
+     width: 80%;
+     height: 400px;
+ }
+ #form{ 
+     position: absolute;
+     width: 200px;
+     height: 500px;
+ }
+ /*...............................................................*/
+ #loginform{
+    width:300px;
+    height:350px;
+    background-color: rgb(0, 26, 255);
+    z-index:1;
+    font-weight: 900;
+    position: absolute;
+    left: 20rem;
+    top: -4.5px;
     text-align: center;
-}
-#c_label{
-    font-size: x-large;
-    text-transform: uppercase;
-    font-weight: 900;
-    position:absolute;
-    top: 10px;
-    left: 30%;
-}
-#c_poit{
-position:absolute;
-}
-#ga{
-    top: 20px;
-    position: relative;
-    padding: 10%;
-}
-#c_Drop,#c_pickup{
-    font-weight: 900;
-    text-transform: capitalize;
-}
-#c_details{
-    font-size: 20px;
-    font-weight: 900;
-    top: 30px;
-    position: relative;
-}
-#c_v1{
-    top: 50px;
-    position: relative;
-    font-size: 15px;
-    font-weight: 900;
-    text-align: start;
-}
-
-@media(max-width:640px)
-{
-    body{
-    background-image: linear-gradient(to right,rgba(20, 21, 19, 0.593),rgba(23, 4, 4, 0.812),rgb(64, 64, 54));
-     display: flex;
-
-    }
-    
- .logo{
-    font-weight:bolder;
-    left: -5px;
-    align-items: center;
-    width: 98%;
-    /* background-color: none; */
- } 
- .icon1{
-    display: block;   
-}  
-.buttoncontainer button{
-  width: 32%;
-  left: -5px;
-  position: relative;
-}
-.tabpanel button{
-    width: 24%;
-}
-#a11,#b11{
-    width: 45%;
-    position: relative;
-}
-#materials{
-    left: 0;
-    top: 3px;
-    width: 100%;
-    position: relative;
-}
-.map{
-    width: 124%;
-    position:relative;
-    height: 400px;
-}
-.detail{
-    top: 48.5rem;
-    left: 0;
-    position:absolute;
-}
-.icon1{
-    display: block;   
-}
-#kmprice{
-    left: 40%;
-}
-#tkm {
-    top: -10px;
-    position: relative;
-left: 10%;
-}
-#km1{
-    top: -70px;
-    left: 50%;
-}
-#priceleft{
-    top: -125px;
-    left: 46%;
-    width: 90px;
-}
-#pricee{
-left: 6%;
-top: -60px;
-}
-.username{
-    width: 55%;
-    left: 10%;
-    bottom: 50px;
-    position: relative;
-}
-.usermobile{
-    top: -30px;
-    left: 10%;
-    width: 55%;
-    position: relative;
-}
-.orderconfirm{
-    top: -10px;
-    width: 30%;
-    height: 2rem;
-    position: relative;
-    left: 10rem;
-    border-radius: 2px;
-    color: black;
-    background-color: antiquewhite;
-    box-shadow: 2px 1px 6px 2px  red;
-}
-.main ul ,li {
+    padding-top: 20px;
+    overflow: hidden;
     display: none;
-}
-.up{
-    left: 0px;
-    width: 96%;
-    height: 30px;
-    padding: 2px;
-}
-.agriplace{
-    left: 12px;
-    width: 94%;
-    height: 30px;
-    padding: 2px;
-}
+    text-transform: capitalize;
 
-/* */
-.price{
-    top: 30px;
-    left: 4%;
+ }
+ #loginform input{
+    /* position:; */
+    padding: 10px;
+    top: -10px;
+    width:92%;
+    outline: none;
+    background-color: rgba(44, 59, 47, 0.546);
+    color: cornsilk;
+ }
+ #login_close{
+    position: absolute;
+    top:0px;
+    right: 0px;
+ }
+ .login_headline{
+    font-size: 30px;
+    text-align: center;
+    color:cornsilk;
+    background-color: rgba(61, 67, 65, 0.553);
+ }
+ #login_submit{
     position: relative;
-    letter-spacing: 1px;
-    font-size: x-large;
-    height: 1rem;
-    color: rgb(237, 236, 247);
+    width: 100%;
+    top: 10px;
+    padding: 10px;
+ }
+ #login_submit:hover{
+     background-color:orangered;
+ }
+ #loginform a{
+    position: relative;
+    bottom: -25px;
+    color: aliceblue;
+    text-decoration:overline;
+ }
+ #loginform a:hover{
+    background-color: orange;
+    color: black;
+ }
+ .driver-dropdown{
    
-}
-.final{
-    width: 25%;
-    /* background-color: black; */
-    position: relative;
-    top: -2px;
-    left:10px;
-    height: 1.5rem;
-}
+     display: none;
+     position: absolute;
+     text-align: center;
+     /* text-decoration: none; */
+     padding: 20px 52px;
+     top: -4px;
+     left: 20rem;
+     border-radius: 30px 2px;
+     overflow: hidden;
+     z-index: 1;
+     width: 250px;
+     height: 650px;
+     box-shadow: 2px 9px 15px 1px red;
+     background-color: rgba(147, 186, 218, 0.96);
+     text-transform: capitalize;
+ }
+ #submit{
+     width: 100%;
+     text-transform: uppercase;
+     background-color: chocolate;
+     border-bottom: none;
+     align-items: center;
+     text-align: center;
+     justify-content: center;
+     position:static;
+     height: 30px;
+     box-shadow: 5px 2px 2px red;
+     cursor: pointer;
+ }
+ 
+ #resett{
+     border-bottom: none;
+     cursor: pointer;
+     font-weight: 100;
+     font-weight: bold;
+ }
+ .close{
+     position: relative;
+     bottom: 100px;
+     left: 155px;
+ }
+ 
+ ::placeholder,input{
+     font-weight: 900;
+     font-size: 15px;
+     font: bolder;
+ }
+ .driver-dropdown input, select{
+     padding: 10px 0px ;
+     margin: 5px;
+     width: 100%;
+     outline: none;
+     background-color: rgba(151, 147, 141, 0.012);
+     border: none;
+     border-bottom: 2px solid black;
+     text-transform: capitalize;
+ }
+ #driverliecence, text{
+    text-transform: uppercase;
+ }
+ #drivervehiclenum,text{
+    text-transform: uppercase;
 
-.km{
-    top: 20px;
-    position: relative;
-    letter-spacing: 1px;
-    font-size: x-large;
-    height: 1rem;
-    color: rgb(237, 236, 247);
-}
-.km1{
-    width: 15%;
-    background-color:rgba(255, 235, 205, 0.558);
+ }
+ .logo ul li a:hover .driver-dropdown{
+     display: block;
+     position:relative;
+ }
+ .close2{
+     left: -35px;
+     top: 5px;
+ 
+     height: 30px;
+     font-weight:bold;
+     font-size: larger;
+     color: black;
+     float: right;
+     position: relative;
+     display: none;
+ }
+ .home{
+     color: red;
+ }
+ 
+ .tabcontainer{
+     width: 100%;
+     height: 200px;
+     position: relative;
+     left: 5rem;
+     background-color: rgb(247, 86, 11);
+     top: -43px;
+     left: 0px;
+ }
+ .buttoncontainer{
+     /* border-radius: 10px; */
+     
+   outline: none;
+     padding: 2px;
+     background-color: rgba(105, 106, 107, 0.923);
+ 
+ }
+ .buttoncontainer button{
+     width: 15%;
+     color: black;
+     padding: 15px;
+     left: -1px;
+     position: relative;
+     box-shadow: 2px 1px 5px 1px rgba(255, 0, 0, 0.693);
+ }
+ 
+ .tabpanel{
+     width:100;
+     padding: 2%;
+     text-align:start;
+     display: none;
+ }
+ 
+ .tabpanel button{
+     width: 150px;
+     height: 100px;
+     padding: 20px;
+   
+     
+ }
+ /* .selected{
+     background-color: rgba(229, 101, 10, 0.94);
+ } */
+ #gps{
+     padding: 20px;
+     font-size: larger;
+     color: black;
+ }
+ .icon1{
+     width: 50px;
+     height: 50px;
+     background-color: aliceblue;
+     position: absolute;
+     left: 86.5%;
+     top: -20px;
+     display: none;
+ }
+ .detail{
+     display: cover;
+     width: 607px;
+     height: 360px;
+     background-color: rgba(43, 11, 175, 0.404);
+     left:57.5%;
+     top: 16.7rem;
+     position: absolute;
+     padding: 20px;
+     align-items:center;
+     
+ 
+ }
+ .km input{
+     top: -25px;
+     left: 22%;
+     padding: 10px;
+     position: relative;
+ 
+ }
+ #pricee{ top: -15px;
+      
+     position: relative;
+ }
+ #kmprice{
+     top:5px;
+     color:rgb(243, 243, 236);
+     left:5%;
+     position: relative;
+ }
+ #tkm{
+     top: 20px;
+     position: relative;
+ }
+ .price input{
+     top: -60px;
+     padding: 10px;
+     left: 22%;
+     position: relative;
+ 
+ }
+ .usermobile{
+     top: -40px;
+     left: 22%;
+     padding: 10px;
+     position: relative;
+ 
+ }
+ .orderconfirm{
+     top: -30px;
+     left: 22%;
+     padding: 10px;
+     position: relative;
+ 
+ }
+ .orderconfirm:hover{
+     background-color: orangered;
+ }
+ .username{
+     top: -50px;
+     left: 22%;
+     padding: 10px;
+     position: relative;
+ 
+ }
+ #customer{
+     width: 42.5%;
+     height:400px;
+     background-color: aquamarine;
+     z-index: 1000;
+     top:25px;
+     position: relative;
+     left: 57.5%;
+     display: none;
+     text-align:center;
+ }
+ /* .customer label{
+     top: 5%;
+     position:relative;
+     padding: 2%;
+     
+ 
+ } */
+ #c_close{
+     left: 46.1%;
+     width: 50px;
+     height: 40px;
+     position: relative;
+ }
+ #lab{
+     position: relative;
+     top: 35%;
+     text-align: center;
+ }
+ #c_label{
+     font-size: x-large;
+     text-transform: uppercase;
+     font-weight: 900;
+     position:absolute;
+     top: 10px;
+     left: 30%;
+ }
+ #c_poit{
+ position:absolute;
+ }
+ #ga{
+     top: 20px;
+     position: relative;
+     padding: 10%;
+ }
+ #c_Drop,#c_pickup{
+     font-weight: 900;
+     text-transform: capitalize;
+ }
+ #c_details{
+     font-size: 20px;
+     font-weight: 900;
+     top: 30px;
+     position: relative;
+ }
+ #c_v1{
+     top: 50px;
+     position: relative;
+     font-size: 15px;
+     font-weight: 900;
+     text-align: start;
+ }
+ 
+ @media(max-width:640px)
+ {
+     body{
+     background-image: linear-gradient(to right,rgba(20, 21, 19, 0.593),rgba(23, 4, 4, 0.812),rgb(64, 64, 54));
+      display: flex;
+ 
+     }
+     
+  .logo{
+     font-weight:bolder;
+     left: -5px;
+     align-items: center;
+     width: 98%;
+     /* background-color: none; */
+  } 
+  .icon1{
+     display: block;   
+ }  
+ .buttoncontainer button{
+   width: 32%;
+   left: -5px;
+   position: relative;
+ }
+ .tabpanel button{
+     width: 24%;
+ }
+ #a11,#b11{
+     width: 45%;
+     position: relative;
+ }
+ #materials{
+     left: 0;
+     top: 3px;
+     width: 100%;
+     position: relative;
+ }
+ .map{
+     width: 124%;
+     position:relative;
+     height: 400px;
+ }
+ .detail{
+     top: 48.5rem;
+     left: 0;
+     position:absolute;
+ }
 
-}
-/* .username{
-    top: 50px;
-    left: 20px;
-    position: relative;
-} */
-
-#mainul{
+ #kmprice{
+     left: 40%;
+ }
+ #tkm {
+     top: -10px;
+     position: relative;
+ left: 10%;
+ }
+ #km1{
+     top: -70px;
+     left: 50%;
+ }
+ #priceleft{
+     top: -125px;
+     left: 46%;
+     width: 90px;
+ }
+ #pricee{
+ left: 6%;
+ top: -60px;
+ }
+ .username{
+     width: 55%;
+     left: 10%;
+     bottom: 50px;
+     position: relative;
+ }
+ .usermobile{
+     top: -30px;
+     left: 10%;
+     width: 55%;
+     position: relative;
+ }
+ .orderconfirm{
+     top: -10px;
+     width: 30%;
+     height: 2rem;
+     position: relative;
+     left: 10rem;
+     border-radius: 2px;
+     color: black;
+     background-color: antiquewhite;
+     box-shadow: 2px 1px 6px 2px  red;
+ }
+ .main ul ,li {
+     display: none;
+ }
+ .up{
+     left: 0px;
+     width: 96%;
+     height: 30px;
+     padding: 2px;
+ }
+ .agriplace{
+     left: 12px;
+     width: 94%;
+     height: 30px;
+     padding: 2px;
+ }
+ 
+ /* */
+ .price{
+     top: 30px;
+     left: 4%;
+     position: relative;
+     letter-spacing: 1px;
+     font-size: x-large;
+     height: 1rem;
+     color: rgb(237, 236, 247);
     
-    z-index: 1;
-    left: 10px;
-    width: 400px;
-    height: 990px;
-    background-color: rgba(22, 22, 22, 0.949);
-}
-ul li {
-    width: 80%;
-    padding-top: 50px;
-    border-bottom: 1px solid white;
-    /* display: inline; */
-}
-.driver-dropdown{
-    width: 250px;
-    height: 600px;
-    left: 0px;
-    top: -130px;
-    position: relative;
-    background-size: cover;
-}
-.close{
-    left: 150px;
-    height:40px ;
-    position: relative;
-}
-.close2{
-    display: block;
-}
-
-}
-
+ }
+ .final{
+     width: 25%;
+     /* background-color: black; */
+     position: relative;
+     top: -2px;
+     left:10px;
+     height: 1.5rem;
+ }
+ 
+ .km{
+     top: 20px;
+     position: relative;
+     letter-spacing: 1px;
+     font-size: x-large;
+     height: 1rem;
+     color: rgb(237, 236, 247);
+ }
+ .km1{
+     width: 15%;
+     background-color:rgba(255, 235, 205, 0.558);
+ 
+ }
+ /* .username{
+     top: 50px;
+     left: 20px;
+     position: relative;
+ } */
+ 
+ #mainul{
+     
+     z-index: 1;
+     left: 10px;
+     width: 400px;
+     height: 990px;
+     background-color: rgba(22, 22, 22, 0.949);
+ }
+ ul li {
+     width: 80%;
+     padding-top: 50px;
+     border-bottom: 1px solid white;
+     /* display: inline; */
+ }
+ .driver-dropdown{
+     width: 250px;
+     height: 600px;
+     left: 0px;
+     top: -130px;
+     position: relative;
+     background-size: cover;
+ }
+ .close{
+     left: 150px;
+     height:40px ;
+     position: relative;
+ }
+ .close2{
+     display: block;
+ }
+ 
+ }
+ 
