@@ -1,3 +1,4 @@
+
 const firebaseConfig = {
   apiKey: "AIzaSyC0YpkxpZC4mtrdxODaMYvJ0vD1ssfbcG0",
   authDomain: "moversnew-ecf01.firebaseapp.com",
@@ -7,13 +8,53 @@ const firebaseConfig = {
   messagingSenderId: "996521849489",
   appId: "1:996521849489:web:a7ad3c4f2e4b5f7a2ac530"
 };
+
 firebase.initializeApp(firebaseConfig);
 console.log("hai ...kjdjd");
 
 const db = firebase.firestore();
 console.log(db);
+const auth = firebase.auth();
 
 
+// const collectionRef = firebase.firestore().collection('userdata');
+/////////////////////////////////////////////////////////////////////////////////////////////
+const signInUser = () => {
+  const email = document.getElementById("usermailid").value;
+  const password = document.getElementById("userpassword").value;
+
+  
+  // Query Firestore collection
+  db.collection('userdata').get().then((snapshot) => {
+    let emailMatched = false;
+
+    snapshot.docs.forEach(doc => {
+      const ddmailid = doc.data().driverEmailID;
+      const userpassword=doc.data().driverPassword;
+      console.log(ddmailid);
+
+      if (email === ddmailid && password===userpassword) {
+        emailMatched = true;
+      }
+    });
+
+    if (emailMatched) {
+      // Email matched in the collection
+      alert("Login successful");
+      usermailid.value="";
+      userpassword.value="";
+
+      // You can call your Firebase authentication here
+    } else {
+      // Email not found in the collection
+      alert("Login error");
+    }
+  }).catch(error => {
+    console.error("Error fetching documents:", error);
+  });
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 var tabbuttons = document.querySelectorAll(".tabcontainer .buttoncontainer button");
@@ -54,6 +95,8 @@ if(panelIndex==2){
     
 }
 showpanel(0,'#f44336');
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const buttons = document.querySelectorAll(".select");
 
@@ -147,7 +190,8 @@ const vehicleTypes = [
   'Traveller',
   'Tiller',
   'Minihitachi',
-  'JCB'
+  'JCB',
+  'Tractor'
 ];
 
 buttons.forEach(button => {
@@ -157,6 +201,7 @@ buttons.forEach(button => {
     if (selectedValue >= 1 && selectedValue <= vehicleTypes.length) {
       const selectedVehicleType = vehicleTypes[selectedValue -1];
       fetchVehicleData(selectedVehicleType);
+      console.log( "user data....."+fetchVehicleData.data);
     } else {
       console.log("Invalid selectedValue");
     }
@@ -165,11 +210,6 @@ buttons.forEach(button => {
   });
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function renderUser(doc){
@@ -183,10 +223,10 @@ function renderUser(doc){
           });
       });
   
-  if (selectedValue == 3) {
+  if (selectedValue == 3) {                                  ///////////////////check////////////////////////////
     console.log("hai ,value 3,,,,,");
   
-    value_to_access =vehiclehave.innerText;
+   let  value_to_access = vehiclehave.textContent;
     console.log("output of value access  "+value_to_access);
     // renderUser(doc);
   }
@@ -198,7 +238,19 @@ function renderUser(doc){
 
   var driver=document.getElementById("driver");
   driver.addEventListener('click',()=>{
+    loginform.style.display="block";
+
+  });
+  var close=document.getElementById("login_close");
+  close.addEventListener('click',()=>{
+    loginform.style.display="none";
+
+  });
+  var driver=document.getElementById("createNewAccount");
+  driver.addEventListener('click',()=>{
     drop.style.display="block";
+    loginform.style.display="none";
+
 
   });
   var close=document.getElementById("close");
@@ -243,6 +295,7 @@ db.collection('userdata').get().then((snapshot)  =>{
      var cc=doc.data().drivername;
      document.getElementById("c_Dname").innerHTML=cc;
      var d=doc.data().drivernum;
+    //  var d=vehicleData.drivername;
      document.getElementById("c_Dnumber").innerHTML=d;
      var e=doc.data().drivervehiclenum ;
      document.getElementById("c_Vnum").innerHTML=e;
@@ -257,7 +310,7 @@ db.collection('userdata').get().then((snapshot)  =>{
 
      var closebox=document.getElementById("c_close");
      closebox.addEventListener('click',()=>{
-     customer.style.display="none";
+      customer.style.display="none";
      });
 
     
@@ -298,9 +351,12 @@ function displayOTP() {
 
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- //Data store in firebase
+//  Data store in firebase
  var userCollection = db.collection("uservalue");
  var drivername = document.getElementById("drivername");
+ var driverEmailID = document.getElementById("enter-mail-id");
+ var driverPassword = document.getElementById("enter-password");
+
  var drivernum = document.getElementById("drivernum");
  
  var driverliecence = document.getElementById("driverliecence");
@@ -311,6 +367,10 @@ function displayOTP() {
  addButton.addEventListener("click", function() {
     // Get the values from the input fields
     let drivername1= drivername.value;
+    let driverEmailID1= driverEmailID.value;
+    let driverPassword1= driverPassword .value;
+
+
     let drivernum1= drivernum.value;
     let driverliecence1= driverliecence.value.toUpperCase();
     let vehiclehave1= vehiclehave.value;
@@ -322,12 +382,12 @@ function displayOTP() {
      
  db.collection("userdata").add({
      drivername: drivername1,
+     driverEmailID:driverEmailID1,
+     driverPassword:driverPassword1,
      drivernum: drivernum1,
      driverliecence: driverliecence1,
      vehiclehave: vehiclehave1,
      drivervehiclenum: drivervehiclenum1
- 
-  
  })
  .then((docRef) => {
     console.log("Document written with ID: ", docRef.id);
@@ -339,6 +399,8 @@ function displayOTP() {
  });
  driverliecence.value = "";
  drivername.value = "";
+ driverEmailID.value="";
+ driverPassword.value="";
  drivernum.value="";
  vehiclehave.value="";
  drivervehiclenum.value="";
@@ -347,7 +409,76 @@ function displayOTP() {
  
   
 
+///////////////////////////////////////////////////////////////////////////////
+// var userCollection = db.collection("uservalue");
+
+// // Generate the customer ID
+// function generateCustomerId() {
+//   const length = 5;
+//   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+//   let customerId = '';
+
+//   for (let i = 0; i < length; i++) {
+//     const randomIndex = Math.floor(Math.random() * characters.length);
+//     customerId += characters.charAt(randomIndex);
+//   }
+
+//   return customerId;
+// }
+// generateCustomerId();
+// const newCustomerId1 = generateCustomerId(); // Generate the customer ID
+// console.log(newCustomerId1);
+
+// var drivername = document.getElementById("drivername");
+// var driverEmailID = document.getElementById("enter-mail-id");
+// var driverPassword = document.getElementById("enter-password");
+// var drivernum = document.getElementById("drivernum");
+// var driverliecence = document.getElementById("driverliecence");
+// var vehiclehave = document.getElementById("vehiclehave");
+// var drivervehiclenum = document.getElementById("drivervehiclenum");
+// var addButton = document.getElementById("submit");
+
+// addButton.addEventListener("click", function() {
+//   let userid = newCustomerId1; // Use the generated customer ID here
+//   let drivername1 = drivername.value;
+//   let driverEmailID1 = driverEmailID.value;
+//   let driverPassword1 = driverPassword.value;
+//   let drivernum1 = drivernum.value;
+//   let driverliecence1 = driverliecence.value.toUpperCase();
+//   let vehiclehave1 = vehiclehave.value;
+//   let drivervehiclenum1 = drivervehiclenum.value.toUpperCase();
+
+//   // Add the collected data to the Firestore collection
+//   db.collection("userdata")
+//     .add({
+//       iduser: userid,
+//       drivername: drivername1,
+//       driverEmailID: driverEmailID1,
+//       driverPassword: driverPassword1,
+//       drivernum: drivernum1,
+//       driverliecence: driverliecence1,
+//       vehiclehave: vehiclehave1,
+//       drivervehiclenum: drivervehiclenum1
+//     })
+//     .then((docRef) => {
+//       console.log("Document written with ID: ", newCustomerId1);
+//     })
+//     .catch((error) => {
+//       console.error("Error adding document: ", error);
+//     });
+
+//   // Clear input fields
+//   driverliecence.value = "";
+//   drivername.value = "";
+//   driverEmailID.value = "";
+//   driverPassword.value = "";
+//   drivernum.value = "";
+//   vehiclehave.value = "";
+//   drivervehiclenum.value = "";
+//   otp.value = "";
+// });
+
  
-
-
+ // Now you can use newCustomerId elsewhere in your code
+ 
 
