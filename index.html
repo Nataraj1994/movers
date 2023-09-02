@@ -3,145 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MOVERS</title>
     <link rel="stylesheet" href="index.css">
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
 </head>
 <body>
-      <div class="main"id="main">
+    <div class="main"id="main">
         <h1 class="logo">movers</h1> 
-        <button class="icon1" id="icon1" onclick="icon1()">img</button>
         <ul id="mainul">
-            <button type="button"   onclick="homepage()"class="close2"><a href="#1">close</a></button>
-            <li><a href="#"class="home">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a id="driver"href="#">Driver</a></li>
-           
-            <form id="form" > 
-                <div id="loginform">
-                    <p class="login_headline">Login</p>
-                    <button id="login_close" width="10px">Close</button><br>
-                    <input type="text" name="user_name" id="usermailid" placeholder="Enter Mail ID"><br><br>
-                    <input type="password" name="user_password" id="userpassword" placeholder="Enter password"><br>
-                    <button id="login_submit" onclick="signInUser()">Submit</button><br>
-                    <a href="#">Forgot password</a><br>
-                    <a id ="createNewAccount"href="#">Create New Account </a>
-
                     
-
-
-                </div>
-                <div id="drop"class="driver-dropdown">
-                   <h3>Registration</h3>
-                   <button id="close"class="close">close</button>
-                   <input id="drivername"type="text" placeholder="Enter Name" required/><br>
-                   <input type="text" name="email" id="enter-mail-id" placeholder="Enter Mail ID" required><br>
-                   <input type="password" name="password" id="enter-password" placeholder="Set password"required><br>
-                   <input id="drivernum"type="num" placeholder="Enter Contact num"required/><br>
-                   <input id="driverliecence"type="text" placeholder="Enter Licence Num"required/><br>
-                   <label for="" >Your Vehicle</label>
-                   <select title="vehiclehave" id="vehiclehave">
-                              <option value="">Choose..</option>
-                              <option value="2 wheel Bike">2 wheel Bike</option>
-                              <option value="3 wheel Auto(passenger)">3 wheel Auto(passenger)</option>
-                              <option value="3 wheel Auto(Cargo)">3 wheel Auto(Cargo) </option>
-                              <option value="4 wheel 5foot">4 wheel 5foot</option>
-                              <option value="4 wheel 9feet">4 wheel 9feet</option>
-                              <option value="4 wheel 12 feet">4 wheel 12 feet</option>
-                              <option value="6 wheel Truck">6 wheel Truck</option>
-                              <option value="Tipper">Tipper</option>
-                              <option value="Tractor">Tractor</option>
-                              <option value="Auto">Auto</option>
-                              <option value="car">car</option>
-                              <option value="Traveller">Traveller</option>
-                              <option value="tiller">Tiller</option>
-                              <option value="minihitachi">Minihitachi</option>
-                              <option value="JCB">JCB</option>
-
-
-
-                    </select><br>
-                   <input id="drivervehiclenum" type="text"placeholder="Enter Vehicle Number"required>
-                   <button class="sendotp" onclick="displayOTP()">Send OTP</button><input id="otp"type="text" placeholder="Enter OTP"/><br>
-                   <button type="button"id="submit"value="submit">submit</button><br>
-                   <input  id="resett"type="reset"/>
-                   <b id="Successfully"></b><br>
-                   <!-- <b>Your ID is :.....</b><br> -->
-                   <hr>
-                </div>
-            </form>
-           
-            <li><a href="#">Contact Us</a></li>
+                       <li><a href="#"class="home">Home</a></li>
+                       <li><a href="#">About</a></li>
+                       <li><a id="driver"href="#">Driver</a></li>
+                       <li><a href="#">Contact Us</a></li>
         </ul>
-
-        <!-- <div class="baground-img"></div> -->
-     <div class="tabcontainer">
-                  <div class="buttoncontainer">
-                    <button  onclick="showpanel(0,'#9966cc')">Cargo Vehicles</button>
-                    <button  onclick="showpanel(1,'#cccc00')">Passenger Vehicles</button>
-                    <button onclick="showpanel(2,'#66cc00')">Agriculture</button>
-                   </div>
-
-                <div class="tabpanel">
-                   <button data-value="1" id="auto" class="select">3 Wheel Auto</button>
-                   <button data-value="2"id="tempo1" class="select">4 wheel 5 feet</button>
-                   <button data-value="3"id="tempo2" class="select">4 wheel 9 feet</button>
-                   <button data-value="4"id="tempo3" class="select">4 wheel 12 feet</button>
-                   <button data-value="5"id="tempo4" class="select">6 wheel Truck</button>
-                   <button data-value="6"id="Tipper" class="select" value="Tipper">Tipper</button>
-                   <button data-value="8"id="Tractor" class="select">Tractor</button><br>
-                  </div>
-
-               <div class="tabpanel">                 
-                   <button data-value="9"id="bike" class="select">Bike</button>
-                   <button data-value="10"id="Auto" class="select">Auto</button>
-                   <button data-value="11"id="car" class="select" >Car</button>
-                   <button data-value="12"id="Traveller" class="select">Traveller</button>
-
-               </div>                
-     
-                <div class="tabpanel">
-                    <button data-value="13"id="Tiller" class="select">Tiller</button>
-                    <button data-value="14"id="hitachi" class="select">Mini Hitachi</button>
-                    <button data-value="15"id="jcb" class="select">JCB</button>
-                    <button data-value="16"id="Tractor" class="select">Tractor</button><br>
-                  </div>
-                  <span class="search"><input id="a11"type="text" placeholder="Enter Pick-Up Place"/><span id="too">TO</span><input id="b11" type="text" placeholder="Enter Droping Place"/> <input id="materials"type="text" placeholder="Type of Material"/></span>
-          <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30885.238283238938!2d74.81706285468401!3d14.618731045643887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbea8d7fcd0f39b%3A0x83f28aeb1f2b1502!2sSirsi%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1690789630399!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-         <div class="detail"> 
-          <b id="kmprice"></b><br>
-          <b class="km"id="km"><p id="tkm">Total Kilometer :</p> <input onload="myFunction12()" id="km1"class="km1"type="Num"placeholder="num"/></b><br>
-          <b class="price"><p id="pricee">Total Price is :</p><input  id="priceleft"class="final"type="Number" placeholder="num"></b><br>
-          <input id="username"class="username"type="text" placeholder="Your name" required><br>
-           <input id="usermobile"class="usermobile" type="text" placeholder="Contact Number"required><br>
-          <button class="orderconfirm" type="submit"onclick="orderconfirm()">Order Confirm</button>
-         </div>
-          
+        <div class="login-signup">
+             <h2>Login</h2>
+             <button id="login_close" type="button">Close</button>
+            <form action="" id="login">
+                    <div class="user-box">
+                    <input type="email"  id="login-email" autocomplete="off" required placeholder="Email">
+                    <label for="">Email</label></div>
+                    
+                     <div class="user-box">
+                    <input type="password"  id="login-pwd" autocomplete="off" required  placeholder="Password">
+                    <label for="">Password</label></div>
+                     
+                <div class="forgot-pwd">
+                    <h4>Forgot Password?</h4></div>
+                
+                <div class="btn">
+                    <button id="login-submit" type="submit">Submit</button>
+                    <div class="loader"></div></div>
+                
+                <h4>Create Account ? <span id ='nav-to-signup'>Click here</span></h4>
+            </form>
         </div>
-        <div id="customer"class="customer">
-            <button id="c_close">close</button>
-            <label  id="c_label">Order Confirmed</label><br>
-            <label id="ga" >Pickup-Point :<span id="c_pickup"></label>,<label id="ga">Destination-Point :<span id="c_Drop"></label><br>
-            <label id="c_details">Vehicle Details</label><br>
-            <label id="c_v1">Vehicle Type :<span id="c_vehicle"></label><br>
-            <label id="c_v1" >Vehicle Number :<span id="c_Vnum"></label><br>
-            <label id="c_v1" >Driver Name :<span id="c_Dname"></label><br>
-            <label id="c_v1" >Contact Number:<span id="c_Dnumber"></label><br>
-            <label id="c_v1">Total KM :<span id="c_km"></span></label><br>
-            <label id="c_v1">Total Amount :<span id="c_Price"></span></label>
-            <label id="lab"><h1>Happy Journey</h1></label>
+        <div class="login-signup">
+            <h2>Signup</h2>
+            <form action="" id="signup">
+                    <div class="user-box">
+                    <input type="text" id="signup-username" autocomplete="off" required placeholder="Username">
+                    <label for="">Username</label> </div>
+               
+                <div class="user-box">
+                    <input type="email" name="" id="signup-email" autocomplete="off" required placeholder="Email">
+                    <label for="">Email</label> </div>
+               
+                <div class="user-box">
+                    <input type="password" name="" id="signup-pwd" autocomplete="off" required placeholder="Password">
+                    <label for="">Password</label></div>
+                
+                <div class="user-box">
+                    <input type="num" name="" id="signup-num" autocomplete="off" required placeholder="Contact Number">
+                    <label for="">Contact Number</label> </div>
+               
+                <div class="user-box">
+                    <input type="text" name="" id="signup-liecence" autocomplete="off" required placeholder="Liecence Number">
+                    <label for="">Liecence Number</label></div>
+            
+                <div class="user-box">
+                    <input type="text" name="" id="signup-vehiclenum" autocomplete="off" required placeholder="Vehicle Number">
+                    <label for="">Vehicle Number</label></div>
+                
+                <div class="user-box">
+                   
+                    <select title="vehiclehave" id="signup-vehiclehave">
+                        <option value="">Choose..</option>
+                        <option value="2 wheel Bike">2 wheel Bike</option>
+                        <option value="3 wheel Auto(passenger)">3 wheel Auto(passenger)</option>
+                        <option value="3 wheel Auto(Cargo)">3 wheel Auto(Cargo) </option>
+                        <option value="4 wheel 5foot">4 wheel 5foot</option>
+                        <option value="4 wheel 9feet">4 wheel 9feet</option>
+                        <option value="4 wheel 12 feet">4 wheel 12 feet</option>
+                        <option value="6 wheel Truck">6 wheel Truck</option>
+                        <option value="Tipper">Tipper</option>
+                        <option value="Tractor">Tractor</option>
+                        <option value="Auto">Auto</option>
+                        <option value="car">car</option>
+                        <option value="Traveller">Traveller</option>
+                        <option value="tiller">Tiller</option>
+                        <option value="minihitachi">Minihitachi</option>
+                        <option value="JCB">JCB</option>   
+                    </select><br>
+                    <label for="">Your Vehicle</label>
+                </div>
+                            <div class="btn">
+                                <button id="signup-submit" type="submit">Submit</button>
+                                <div class="loader"></div>
+                            </div>
+                           <h4>Already have an Account ? <span id="nav-to-login">Click here</span></h4>
+            </form>
+        </div>
+        
+        <div class="user-details">
+            <h1></h1>
+            <button>Sign Out</button><br>
+    
+            <div class="info">
+                <button id="userinfo"type="button">close</button>
+                     <h2>..Account Details..</h2>
+                     User ID : <input  title="User ID" type="text" id="uid_driver" readonly><br>
+                     Name :<input  title="User ID"type="text" id="name_driver" readonly><br>
+                     Contact Number :<input  title="User ID" type="text" id="email_driver" readonly><br>
+                     Email : <input type="text"  title="User ID"id="num_driver" readonly><br>
+                     Liecence Number :<input  title="User ID"type="text" id="liecence_driver" readonly><br>
+                     Vehicle Number :<input  title="User ID"type="text" id="vehiclenum_driver" readonly><br>
+                     Type of Vehicle :<input  title="User ID"type="text" id="vehicletype_driver" readonly><br>
             </div>
-       
+        </div>
+        <div class="rsepect_driver">Give Respect Drivers</div>
+        <div class="tabcontainer">
+             <div class="buttoncontainer">
+              <button  onclick="showpanel(0,'#9966cc')">Cargo Vehicles</button>
+              <button  onclick="showpanel(1,'#cccc00')">Passenger Vehicles</button>
+              <button onclick="showpanel(2,'#66cc00')">Agriculture</button>
+             </div>
+
+             <div class="tabpanel">
+             <button data-value="1" id="auto" class="select">3 Wheel Auto</button>
+             <button data-value="2"id="tempo1" class="select">4 wheel 5 feet</button>
+             <button data-value="3"id="tempo2" class="select">4 wheel 9 feet</button>
+             <button data-value="4"id="tempo3" class="select">4 wheel 12 feet</button>
+             <button data-value="5"id="tempo4" class="select">6 wheel Truck</button>
+             <button data-value="6"id="Tipper" class="select" value="Tipper">Tipper</button>
+             <button data-value="8"id="Tractor" class="select">Tractor</button><br>
+             </div>
+
+             <div class="tabpanel">                 
+             <button data-value="9"id="bike" class="select">Bike</button>
+             <button data-value="10"id="Auto" class="select">Auto</button>
+             <button data-value="11"id="car" class="select" >Car</button>
+             <button data-value="12"id="Traveller" class="select">Traveller</button>
+             </div>
+                              
+
+              <div class="tabpanel">
+              <button data-value="13"id="Tiller" class="select">Tiller</button>
+              <button data-value="14"id="hitachi" class="select">Mini Hitachi</button>
+              <button data-value="15"id="jcb" class="select">JCB</button>
+              <button data-value="16"id="Tractor" class="select">Tractor</button><br>
+              </div>
+
+
+              <span class="search"><input id="a11"type="text" placeholder="Enter Pick-Up Place"/><span id="too">TO</span><input id="b11" type="text" placeholder="Enter Droping Place"/> <input id="materials"type="text" placeholder="Type of Material"/></span>
+            
+              <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30885.238283238938!2d74.81706285468401!3d14.618731045643887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbea8d7fcd0f39b%3A0x83f28aeb1f2b1502!2sSirsi%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1690789630399!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+
+                <div class="order_details"> 
+                    <b id="kmprice"></b><br>
+                    <b class="km"id="km"><p id="tkm">Total Kilometer </p> <input onload="myFunction12()" id="km1"class="km1"type="Num"placeholder="num"/></b><br>
+                    <b class="price"><p id="pricee">Total Price is   </p><input  id="priceleft"class="final"type="Number" placeholder="num"></b><br>
+                    <input id="username"class="username"type="text" placeholder="Your name" required><br>
+                    <input id="usermobile"class="usermobile" type="text" placeholder="Contact Number"required><br>
+                    <button id="otpgenerate" type="button" onclick="otpgenerate()">Get OTP</button>
+                    <input id="usermobile_otp"type="text" name="" id="usermobile_otp" placeholder="Enter OTP">
+                    <button class="orderconfirm" type="submit"onclick="orderconfirm()">Order Confirm</button>
+                </div>
+
+            
+            </div>
+                    <div id="customer"class="to_customer">
+                                <button id="c_close">close</button>
+                                <label  id="c_label">Order Confirmed</label><br>
+                                <label id="ga" >Pickup-Point :<span id="c_pickup"></label>,<label id="ga">Destination-Point :<span id="c_Drop"></label><br>
+                                <label id="c_details">Vehicle Details</label><br>
+                                <label id="c_v1">Vehicle Type :<span id="c_vehicle"></label><br>
+                                <label id="c_v1" >Vehicle Number :<span id="c_Vnum"></label><br>
+                                <label id="c_v1" >Driver Name :<span id="c_Dname"></label><br>
+                                <label id="c_v1" >Contact Number:<span id="c_Dnumber"></label><br>
+                                <label id="c_v1">Total KM :<span id="c_km"></span></label><br>
+                                <label id="c_v1">Total Amount :<span id="c_Price"></span></label>
+                                <label id="lab"><h1>Happy Journey</h1></label>
+                   </div>
+           
+    
+
+
+
+
 
     </div>
 
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDMyjkg79QtdNFNr3XKMG_4lGR8hmbSv18",
+          authDomain: "moversnew-5e182.firebaseapp.com",
+          databaseURL: "https://moversnew-5e182-default-rtdb.firebaseio.com",
+          projectId: "moversnew-5e182",
+          storageBucket: "moversnew-5e182.appspot.com",
+          messagingSenderId: "291233257782",
+          appId: "1:291233257782:web:971994c499c490b1527b97",
+          measurementId: "G-P5DHTV25M9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+      
+      
+      </script>
+    <script  src="index.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-auth-compat.js"></script>
-
-
-    <script src="./index.js"></script>
 </body>
 </html>
