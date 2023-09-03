@@ -423,8 +423,8 @@ function orderconfirm(){
          document.getElementById("c_pickup").innerHTML=a;
          var b=document.getElementById("b11").value;
          document.getElementById("c_Drop").innerHTML=b;
-        //  var cc=doc.data().userName;
-         var cc=result_name;
+         var cc=doc.data().userName;
+         // var cc=result_name;
 
          document.getElementById("c_Dname").innerHTML=cc;
          var d=doc.data().ContactNumber;
