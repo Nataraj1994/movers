@@ -535,6 +535,9 @@ position:absolute;
 #media_btn{
 display: none;
 z-index: 50;
+top: -34px;
+left:0%;
+position: relative;
 }
 
 
@@ -550,6 +553,11 @@ z-index: 50;
   
     #media_btn{
         display: block;
+    }
+    .logo{
+        padding: 0px;
+        top: 0px;
+        position: relative;
     }
     .order_details{
         width: 100%;
@@ -569,26 +577,22 @@ z-index: 50;
     width: 100%;
     height: 50px;
     background-color: #6c887b;
-    list-style: none; /* Remove default list styles */
-    padding: 02px; /* Remove default padding */
     left: 0px;
-    top: 10px;
+    top: -25px;
+    position: relative;
 }
 
 ul li {
     display: inline-block;
     position: relative;
     z-index: 4;
-    left: -50px;
-    width: 19%;
+    left: -90px;
+    width: 23.5%;
+    padding: 2px 8px;
     
 
 }
-  ul li a{
-    display:inline-block;
-    position: relative;
-    z-index: 44;
-  }
+ 
     .rsepect_driver{
         display: none;
     }
@@ -636,7 +640,7 @@ ul li {
     #materials{
      width: 100%;
      position: absolute;
-     top: 18.5rem;
+     top: 19rem;
      left: 0px;
     }
     
