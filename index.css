@@ -296,6 +296,7 @@ iframe{
     position: relative;
     left: 65%;
     display: none;
+    margin-top: 30px;
     text-align:center;
     box-shadow: 2px 5px 12px red;
   
@@ -543,13 +544,15 @@ z-index: 50;
 /*.................................................................................*/
 
 @media screen and (max-width: 480px)
-{
+{  body{
+    display: flex;
+}
   
     #media_btn{
         display: block;
     }
     .order_details{
-        width: 393px;
+        width: 100%;
         height: 300px;
         background-color: rgba(169, 164, 193, 0.825);
         left:-20px;
@@ -560,33 +563,51 @@ z-index: 50;
         
     } 
    
-    ul{
-        display:inline;
-        top: 1rem;
-        /* width: 300px;
-        height: 300px; */
-         z-index: 5;
-        background-color: #6c887b;
-        padding: 20px;
-        position: relative;
-        
-    } 
-  
+  ul {
+    display: no;
+    z-index: 5;
+    width: 100%;
+    height: 50px;
+    background-color: #6c887b;
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    left: 0px;
+    top: 10px;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+    z-index: 44;
+    left: -50px;
+    width: 19%;
+    
+
+}
+  ul li a{
+    display:inline-block;
+    position: relative;
+    z-index: 44;
+  }
     .rsepect_driver{
         display: none;
     }
     .buttoncontainer{
        top:-6rem;
+       align-content: center;
        position: relative;
+       z-index: 2;
        
     }
     .buttoncontainer button{
-        width:156px;
+        width:32%;
         height: 40px;
-        padding: 3.3px;
+        padding: 12.3px;
+        top: 3rem;
     }
     .tabpanel{
-        top:-6rem;
+        margin-top:-30px;
+        top:-1rem;
 
     }
     .tabpanel button{
@@ -594,15 +615,18 @@ z-index: 50;
         height: 60px;
     }
     #a11{
-        top:-6rem;
-        width: 225px;
+        top:1.5rem;
+        width: 47.5%;
         height: 40px;
     }
     #b11{
-        top:-6rem;
-        width: 230px;
+        top:1.5rem;
+        width: 47.5%;
         height: 40px;
         left: 5%;
+        position: relative;
+   
+
     }
     #too{
         top: -10rem;
@@ -612,25 +636,27 @@ z-index: 50;
     #materials{
      width: 100%;
      position: absolute;
-     top: 20rem;
+     top: 20.5rem;
      left: 0px;
     }
     
     .map{
-        top: -3rem;
-        width:480px;
+        top: 2rem;
+        width:100%;
+        position: relative;
+        
     }
     iframe{
-        width: 480px;
+        width: 100%;
         height: 250px;
     }
     .order_details{
 
-        top: 38.5rem;
-        width: 480px;
+        top: 2rem;
+        width: 100%;
         height: 300px;
         left: 0px;
-        position: absolute;
+        position:relative;
     }
     .user-details{
         left: 0px;
@@ -675,7 +701,8 @@ z-index: 50;
     } 
     #customer{
         left: 0px;
-        width: 70%;
+        width: 100%;
         top: 19rem;
+        margin-top:-30px;
     }
 } 
