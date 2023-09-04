@@ -570,7 +570,7 @@ z-index: 50;
     height: 50px;
     background-color: #6c887b;
     list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove default padding */
+    padding: 02px; /* Remove default padding */
     left: 0px;
     top: 10px;
 }
@@ -578,7 +578,7 @@ z-index: 50;
 ul li {
     display: inline-block;
     position: relative;
-    z-index: 44;
+    z-index: 4;
     left: -50px;
     width: 19%;
     
@@ -636,7 +636,7 @@ ul li {
     #materials{
      width: 100%;
      position: absolute;
-     top: 18.5rem;
+     top: 20.5rem;
      left: 0px;
     }
     
