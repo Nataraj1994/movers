@@ -5,6 +5,10 @@
     font-family: sans-serif;
 }
 
+.home{
+    color: rgba(24, 23, 22, 0.967);
+    font-weight: 600;
+}
 body{
     height: 100vh;
     background: linear-gradient(to right , #090979,#00d4ff);
@@ -578,7 +582,7 @@ position: relative;
     height: 50px;
     background-color: #6c887b;
     left: 0px;
-    top: -5px;
+    top: -25px;
     position: relative;
 }
 
@@ -586,45 +590,52 @@ ul li {
     display: inline-block;
     position: relative;
     z-index: 4;
-    left: -90px;
     width: 23.5%;
-    padding: 2px 8px;
+    padding: 2px;
     
 
 }
- 
+ul li a {
+    display: inline-block;
+    position: relative;
+    z-index: 4;
+    left:-25px;
+    padding: 5px;
+    width: 100%;
+    
+
+}
     .rsepect_driver{
         display: none;
     }
     .buttoncontainer{
-       top:-6rem;
+       top:-5rem;
        align-content: center;
        position: relative;
-       z-index: 2;
+       z-index: 7;
        
     }
     .buttoncontainer button{
         width:32%;
         height: 40px;
         padding: 12.3px;
-        top: 3rem;
     }
     .tabpanel{
         margin-top:-30px;
-        top:-1rem;
-
-    }
+        top:-3rem;
+        vertical-align: middle;
+        }
     .tabpanel button{
         width: 145px;
         height: 60px;
     }
     #a11{
-        top:1.5rem;
+        top:.5rem;
         width: 47.5%;
         height: 40px;
     }
     #b11{
-        top:1.5rem;
+        top:.5rem;
         width: 47.5%;
         height: 40px;
         left: 5%;
@@ -645,7 +656,7 @@ ul li {
     }
     
     .map{
-        top: 2rem;
+        top: 1rem;
         width:100%;
         position: relative;
         
@@ -656,7 +667,7 @@ ul li {
     }
     .order_details{
 
-        top: 2rem;
+        top: 1rem;
         width: 100%;
         height: 300px;
         left: 0px;
@@ -682,22 +693,28 @@ ul li {
         font-size: 10px;
         padding: 5px;
     }
+    #kmprice{
+        top: -30px;
+        left: -20px;
+    }
     #otpgenerate{
         top: -1.2rem;
         height: 30px;
         position:relative;
-        width: 40px;
+        width: 50px;
     }
     #usermobile_otp{
         top: -1.5rem;
-        width: 115px;
+        width: 107px;
         height: 30px;
         position:relative;
     }
     .orderconfirm{
-        width: 40%;
+        width: 46%;
         height:35px;
-        left: -4rem;
+        left: -5rem;
+        text-align: center;
+        position: relative;
         background-color: #0d0d0d21;   
     }
     .orderconfirm:hover{
@@ -708,5 +725,9 @@ ul li {
         width: 100%;
         top: 19rem;
         margin-top:-30px;
+    }
+    .login-signup{
+     left:-9.8rem;
+     width: 100%;
     }
 } 
