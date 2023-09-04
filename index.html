@@ -5,28 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOVERS</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+
 </head>
 <body>
     <div class="main"id="main">
         <h1 class="logo">movers</h1> 
+        <i id="media_btn"class="fa-solid fa-bars"></i>
         <ul id="mainul">
                     
                        <li><a href="#"class="home">Home</a></li>
                        <li><a href="#">About</a></li>
                        <li><a id="driver"href="#">Driver</a></li>
-                       <li><a href="#">Contact Us</a></li>
+                       <li><a href="#">ContactUs</a></li>
         </ul>
         <div class="login-signup">
              <h2>Login</h2>
-             <button id="login_close" type="button">Close</button>
+             <i id="login_close"class="fa-regular fa-rectangle-xmark"></i>
+            
             <form action="" id="login">
                     <div class="user-box">
-                    <input type="email"  id="login-email" autocomplete="off" required placeholder="Email">
+                    <input type="Email"  id="login-email" autocomplete="off" required placeholder="Email">
                     <label for="">Email</label></div>
                     
                      <div class="user-box">
@@ -43,9 +48,11 @@
                 <h4>Create Account ? <span id ='nav-to-signup'>Click here</span></h4>
             </form>
         </div>
+
         <div class="login-signup">
             <h2>Signup</h2>
             <form action="" id="signup">
+                <i id="signup_close"class="fa-regular fa-rectangle-xmark"></i>
                     <div class="user-box">
                     <input type="text" id="signup-username" autocomplete="off" required placeholder="Username">
                     <label for="">Username</label> </div>
@@ -101,11 +108,12 @@
         </div>
         
         <div class="user-details">
-            <h1></h1>
+                <h1></h1>
             <button>Sign Out</button><br>
     
             <div class="info">
-                <button id="userinfo"type="button">close</button>
+                <i id="userinfo"class="fa-regular fa-rectangle-xmark"></i>
+
                      <h2>..Account Details..</h2>
                      User ID : <input  title="User ID" type="text" id="uid_driver" readonly><br>
                      Name :<input  title="User ID"type="text" id="name_driver" readonly><br>
@@ -120,8 +128,8 @@
         <div class="tabcontainer">
              <div class="buttoncontainer">
               <button  onclick="showpanel(0,'#9966cc')">Cargo Vehicles</button>
-              <button  onclick="showpanel(1,'#cccc00')">Passenger Vehicles</button>
-              <button onclick="showpanel(2,'#66cc00')">Agriculture</button>
+              <button  onclick="showpanel(1,'#cccc00')">Passenger </button>
+              <button onclick="showpanel(2,'#66cc00')">Agriculture </button>
              </div>
 
              <div class="tabpanel">
@@ -157,20 +165,21 @@
               </div>
 
                 <div class="order_details"> 
+                    <h2>Order Details</h2>
                     <b id="kmprice"></b><br>
                     <b class="km"id="km"><p id="tkm">Total Kilometer </p> <input onload="myFunction12()" id="km1"class="km1"type="Num"placeholder="num"/></b><br>
                     <b class="price"><p id="pricee">Total Price is   </p><input  id="priceleft"class="final"type="Number" placeholder="num"></b><br>
                     <input id="username"class="username"type="text" placeholder="Your name" required><br>
                     <input id="usermobile"class="usermobile" type="text" placeholder="Contact Number"required><br>
-                    <button id="otpgenerate" type="button" onclick="otpgenerate()">Get OTP</button>
+                    <button id="otpgenerate" type="button" onclick="otpgenerate()">OTP</button>
                     <input id="usermobile_otp"type="text" name="" id="usermobile_otp" placeholder="Enter OTP">
-                    <button class="orderconfirm" type="submit"onclick="orderconfirm()">Order Confirm</button>
+                    <button class="orderconfirm" type="submit"onclick="orderconfirm()">Confirm</button>
                 </div>
 
             
             </div>
                     <div id="customer"class="to_customer">
-                                <button id="c_close">close</button>
+                                <i id="c_close"class="fa-regular fa-rectangle-xmark"></i>
                                 <label  id="c_label">Order Confirmed</label><br>
                                 <label id="ga" >Pickup-Point :<span id="c_pickup"></label>,<label id="ga">Destination-Point :<span id="c_Drop"></label><br>
                                 <label id="c_details">Vehicle Details</label><br>
