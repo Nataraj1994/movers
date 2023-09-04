@@ -21,7 +21,7 @@ body{
     box-shadow: 0 15px 25px rgba(0,0,0,0.6);
     border-radius: 10px;
     padding: 40px;
-    z-index: 1;
+    z-index: 10;
 }
 
 .login-signup h2{
@@ -30,7 +30,13 @@ body{
     padding: 0;
     text-align: center;
 }
-
+.fa-rectangle-xmark{
+    font-size: 32px;
+    color: #f3f3f3;
+    position: absolute;
+    top: 0px;
+    left: 91%;
+}
 .login-signup .user-box{
     position: relative;
 }
@@ -75,13 +81,7 @@ position: relative;
     position: relative;
 
 }
-#login_close{
-    border-radius: 20px;
-   left: 22.7rem;
-   top: 0px;
-   position: absolute;
-    
-}
+
 .btn button{
   
     padding: 5px 20px;
@@ -146,8 +146,8 @@ h4 span{
     
 }
 #userinfo{
-    background-color: #3498db;
     text-align: start;
+    color: #0d0d0d;
     width: 1px;
     position: absolute;
     height: 1px;
@@ -268,16 +268,17 @@ iframe{
 }
 #materials{
     width: 41.1%;
-    left: 1%;
+    left: 1%;    font-weight: 900;
 }
 #a11{
     border: none;/*pickup point*/
     width: 28%;
+    font-weight: 900;
 }
 #b11{
     border: none;/*Droping point*/
     left: 1%;
-    width: 28%;
+    width: 28%;    font-weight: 900;
 }
 #too{
     font-weight: 900;
@@ -290,14 +291,17 @@ iframe{
 .to_customer{
     width: 32%;
     height:450px;
-    background-color: aquamarine;
+    background-color: rgb(225, 230, 216);
     bottom: -60px;
     position: relative;
     left: 65%;
     display: none;
     text-align:center;
+    box-shadow: 2px 5px 12px red;
+  
 }
 #c_close{
+    color: #0d0d0d;
     left: 46.1%;
     width: 50px;
     height: 40px;
@@ -342,16 +346,31 @@ position:absolute;
     text-align: start;
 }
 .order_details{
-    display: cover;
     width: 630px;
     height: 400px;
     background-color: rgba(43, 11, 175, 0.404);
     left:58.8%;
-    top: 15.8rem;
-    position: absolute;
+    top: -27.2rem;
+    position: relative;
     padding: 30px;
     align-items:center;
     
+}
+.order_details h2{
+    text-align: center;
+    color: orangered;
+    font-weight: 800;
+}
+ /* ::placeholder{
+    font-weight: 900;
+    font-size: 14p
+    color: rgb(0, 0, 0);
+    
+} */
+.order_details input{
+    font-weight: 900;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
 }
 .km input{
     top: -30px;
@@ -402,16 +421,18 @@ position:absolute;
     top: -10px;
     left: 24.5%;
     padding: 10px;
-    width: 19%;
+    width: 27%;
     position: relative;
 
 }
 .orderconfirm{
-    top: 35px;
-    width: 32.7%;
-    left: -9%;
-    padding: 10px;
+    top: 42px;
+    width: 41%;
+    left: -17%;
+    padding: 15px;
     position: relative;
+    text-transform: capitalize;
+    font-weight: 900;
 
 }
 .orderconfirm:hover{
@@ -501,4 +522,160 @@ position:absolute;
     position:relative;
     box-shadow: 2px 1px 5px 1px rgba(43, 5, 5, 0.508);
 }
+.fa-bars{
+    display: none;
+    font-size: 30px;
+    color: #f1e8e8;
+    top: 0rem;
+    position: relative;
+    float:right;
+}
 
+#media_btn{
+display: none;
+z-index: 50;
+}
+
+
+
+
+
+/*.................................................................................*/
+
+@media screen and (max-width: 480px)
+{
+  
+    #media_btn{
+        display: block;
+    }
+    .order_details{
+        width: 393px;
+        height: 300px;
+        background-color: rgba(169, 164, 193, 0.825);
+        left:-20px;
+        top: 0rem;
+        position: relative;
+        padding: 30px;
+        align-items:center;
+        
+    } 
+   
+    ul{
+        display:inline;
+        top: 1rem;
+        /* width: 300px;
+        height: 300px; */
+         z-index: 5;
+        background-color: #6c887b;
+        padding: 20px;
+        position: relative;
+        
+    } 
+  
+    .rsepect_driver{
+        display: none;
+    }
+    .buttoncontainer{
+       top:-6rem;
+       position: relative;
+       
+    }
+    .buttoncontainer button{
+        width:156px;
+        height: 40px;
+        padding: 3.3px;
+    }
+    .tabpanel{
+        top:-6rem;
+
+    }
+    .tabpanel button{
+        width: 145px;
+        height: 60px;
+    }
+    #a11{
+        top:-6rem;
+        width: 225px;
+        height: 40px;
+    }
+    #b11{
+        top:-6rem;
+        width: 230px;
+        height: 40px;
+        left: 5%;
+    }
+    #too{
+        top: -10rem;
+        left: 5%;
+        display:none;
+    }
+    #materials{
+     width: 100%;
+     position: absolute;
+     top: 20rem;
+     left: 0px;
+    }
+    
+    .map{
+        top: -3rem;
+        width:480px;
+    }
+    iframe{
+        width: 480px;
+        height: 250px;
+    }
+    .order_details{
+
+        top: 38.5rem;
+        width: 480px;
+        height: 300px;
+        left: 0px;
+        position: absolute;
+    }
+    .user-details{
+        left: 0px;
+        position: absolute;
+    }
+    .user-details button{
+        width: 200px;
+        left: 105px;
+        align-items: center;
+    }
+    .order_details h2{
+        margin-top: 3px;
+        text-align: center;
+        left: 120px;
+        top: 0px;
+        position: absolute;
+    }
+    .order_details input{
+        font-size: 10px;
+        padding: 5px;
+    }
+    #otpgenerate{
+        top: -1.2rem;
+        height: 30px;
+        position:relative;
+        width: 40px;
+    }
+    #usermobile_otp{
+        top: -1.5rem;
+        width: 115px;
+        height: 30px;
+        position:relative;
+    }
+    .orderconfirm{
+        width: 40%;
+        height:35px;
+        left: -4rem;
+        background-color: #0d0d0d21;   
+    }
+    .orderconfirm:hover{
+        background-color: orange;
+    } 
+    #customer{
+        left: 0px;
+        width: 70%;
+        top: 19rem;
+    }
+} 
